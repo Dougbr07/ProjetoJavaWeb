@@ -39,8 +39,7 @@ public class ServletLogin extends HttpServlet {
             }else{
                 response.sendRedirect("inicialCliente.jsp");
             }
-
-            
+        
        }else{
        
             RequestDispatcher r = request.getRequestDispatcher( "index.jsp" );

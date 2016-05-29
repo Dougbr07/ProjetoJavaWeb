@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 28/05/2016, 11:32:43
-    Author     : Douglas
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -56,12 +50,10 @@
     <body onload="validar()">
       
         
-         <div class="clr"></div>
-            </div><!--/ Codrops top bar -->
             <br><br>
             <section>				
                 <div id="container_demo" >
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                  
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
@@ -79,11 +71,13 @@
 
                                 <p class="login button"> 
                                     <input type="submit" value="Entrar" /> 
-								</p>
+				</p>
+                               
                                 <p class="change_link">
-									Não é cliente ?
-									<a href="#toregister" class="to_register">Cadastre-se</a>
-								</p>
+                                    Não é cliente ?
+                                    <a href="#toregister" class="to_register">Cadastre-se</a>
+				</p>
+                                
                             </form>
                         </div>
 
@@ -92,7 +86,7 @@
                                 <h1> Cadastro de Cliente </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Nome Completo</label>
-                                    <input id="usernamesignup" name="nome" required="required" type="text" placeholder="mysuperusername690" />
+                                    <input id="usernamesignup" name="nome" required="required" type="text" placeholder="João da Silva" />
                                 </p>
                                 <p> 
                                     <label for="emailsignup" class="youmail" data-icon="e" > E-mail</label>
@@ -108,7 +102,11 @@
                                 </p>
                                 <p> 
                                     <label for="enderecosigin" class="youpasswd" data-icon="e"> Endereço </label>
-                                    <input id="passwordsignup" name="endereco" required="required" type="password" placeholder="Rua C, n.82"/>
+                                    <input id="passwordsignup" name="endereco" required="required" type="text" placeholder="Rua C, n.82"/>
+                                </p>
+                                <p> 
+                                    <label for="enderecosigin" class="youpasswd" data-icon="f"> Telefone </label>
+                                    <input id="passwordsignup" name="telefone" required="required" type="text" placeholder="(xx)xxxx-xxxx"/>
                                 </p>
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="u"> Usuario </label>

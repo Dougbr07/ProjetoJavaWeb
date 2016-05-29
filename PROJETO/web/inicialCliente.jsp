@@ -1,9 +1,3 @@
-<%-- 
-    Document   : inicialCliente
-    Created on : 28/05/2016, 18:46:30
-    Author     : Douglas
---%>
-
 <%@page import="Bean.Pessoa"%>
 <%@page import="DAO.JdbcPessoaDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -93,8 +87,9 @@
                                     <p class="signin button"> 
 				    
                                      <input type="button" onclick="telaInicial()" value="TELA INICIAL"/> 
-                                     <input type="button" onclick="detalhesPedido()" value="DETALHES DE PEDIDO"/> 
+                                     <input type="button" onclick="detalhesPedido()" value="DETALHES"/> 
                                      <input type="button" onclick="novoPedido()" value="NOVO PEDIDO"/> 
+                                     <input type="button" onclick="novoPedido()" value="SAIR"/>
                                    
      
                                     </p>

@@ -25,19 +25,19 @@
            
             function telaInicial(){
             
-                location.href="inicialCliente.jsp"
+                location.href="inicialAdm.jsp"
             
              }
              
             function detalhesPedido(){
             
-                location.href="inicialCliente.jsp"
+                location.href="inicialAdm.jsp"
             
              }
              
             function novoPedido(){
             
-                location.href="inicialCliente.jsp"
+                location.href="inicialAdm.jsp"
             
              }
              
@@ -79,82 +79,66 @@
     
     %> 
         
-        
-        
-        
-        
-        
-        
         <br><br>
-            <section>				
-                <div id="container_demo" >
-                   
+        <section>				
+            <div id="container_demo" >
 
-                    <div id="wrapper">
-                       
-                             <h1> Area do Administrador  </h1> 
+                <div id="wrapper">
 
-                                    <p class="signin button"> 
-				    
-                                     <input type="button" onclick="telaInicial()" value="TELA INICIAL"/> 
-                                     <input type="button" onclick="detalhesPedido()" value="CATEGORIAS"/> 
-                                     <input type="button" onclick="novoPedido()" value="PRODUTOS"/> 
-                                   
-     
-                                    </p>
-                                     <div>
-                                        
-                                        <table width="100%" border="1">
-                                            
-                                            
-                                           <tr>
-                                            <td>Nome:</td>
-                                            <td><%= pCliente.getNome() %></td> 
-                                            
-                                            <td>Cpf:</td>
-                                            <td><%= pCliente.getCpf() %></td>
-       
-                                          </tr>
-                                          
-                                          <tr>
-                                            <td>Rg:</td>
-                                            <td><%= pCliente.getRg() %></td>
-                                            <td>Email:</td>
-                                            <td><%= pCliente.getEmail() %></td>
-                                         
-                                          </tr> 
-                                             
-                                          <tr>
-                                            <td>Endereço:</td>
-                                            <td><%= pCliente.getEndereco() %></td>
-                                            <td>Telefone:</td>
-                                            <td><%= pCliente.getTelefone() %></td>
-                                          </tr> 
-                                          <tr>
-                                            <td>Usuario:</td>
-                                            <td><%= pCliente.getUsuario() %></td>
-                                            <td>Nivel de Acesso:</td>
-                                            <td><%= nivel %></td>
-                                          </tr>  
-                                            
-                                            
-                                            
-                                            
-                                        </table>
+                         <h1> Area do Administrador  </h1> 
 
-                                    </div>
-                        </div>
+                                <p class="signin button"> 
+
+                                 <input type="button" onclick="telaInicial()" value="TELA INICIAL"/> 
+                                 <input type="button" onclick="detalhesPedido()" value="CATEGORIAS"/> 
+                                 <input type="button" onclick="novoPedido()" value="PRODUTOS"/>
+                                 <input type="button" onclick="novoPedido()" value="SAIR"/>
+
+
+                                </p>
+                                 <div>
+
+                                    <table width="100%" border="1">
+
+
+                                       <tr>
+                                        <td>Nome:</td>
+                                        <td><%= pCliente.getNome() %></td> 
+
+                                        <td>Cpf:</td>
+                                        <td><%= pCliente.getCpf() %></td>
+
+                                      </tr>
+
+                                      <tr>
+                                        <td>Rg:</td>
+                                        <td><%= pCliente.getRg() %></td>
+                                        <td>Email:</td>
+                                        <td><%= pCliente.getEmail() %></td>
+
+                                      </tr> 
+
+                                      <tr>
+                                        <td>Endereço:</td>
+                                        <td><%= pCliente.getEndereco() %></td>
+                                        <td>Telefone:</td>
+                                        <td><%= pCliente.getTelefone() %></td>
+                                      </tr> 
+                                      <tr>
+                                        <td>Usuario:</td>
+                                        <td><%= pCliente.getUsuario() %></td>
+                                        <td>Nivel de Acesso:</td>
+                                        <td><%= nivel %></td>
+                                      </tr>  
+
+
+
+
+                                    </table>
+
+                                </div>
                     </div>
-                 
-            </section>
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            </div>
+        </section>
     </body>
 </html>

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlets;
 
 import Bean.Pessoa;
@@ -16,19 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Douglas
- */
 @WebServlet(name = "ServletLogin", urlPatterns = {"/ServletLogin"})
 public class ServletLogin extends HttpServlet {
-
-
-
-
-  
-
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,16 +21,11 @@ public class ServletLogin extends HttpServlet {
        novaPessoa.setUsuario(request.getParameter("usuario"));
        novaPessoa.setSenha(request.getParameter("senha"));
        
-
-       
        JdbcPessoaDao pessoaDao = new JdbcPessoaDao();
        Pessoa pessoaLogada = new Pessoa();
        pessoaLogada = pessoaDao.validar(novaPessoa);
        int erro = 1;
         
-       
-       
-       
        if(pessoaLogada.getUsuario() instanceof String){
        
             HttpSession session = request.getSession();
@@ -56,13 +35,9 @@ public class ServletLogin extends HttpServlet {
             session.setMaxInactiveInterval(10*60);
             
             if(pessoaLogada.getUser_nivel() > 0){
-                        
-                response.sendRedirect("admPage.jsp");
-            
+                response.sendRedirect("incialAdm.jsp");
             }else{
-            
-                response.sendRedirect("clientePage.jsp");
-            
+                response.sendRedirect("inicialCliente.jsp");
             }
 
             

@@ -201,36 +201,31 @@ public class JdbcPessoaDao implements PessoaDao{
     }
     
     public Pessoa validar(Pessoa pessoa){
-
         Pessoa pessoa1 = new Pessoa();
-        
-    try{
+        try{
            
-         String sql = "select * from customers where user_login = ? and password = ?";
-         
-         PreparedStatement prep = connection.prepareStatement(sql);
-         prep.setString(1, pessoa.getUsuario());
-         prep.setString(2, pessoa.getSenha());
-         ResultSet rs = prep.executeQuery();
-         
-         if(rs.next()){
-         
-             
-             pessoa1.setUsuario(rs.getString("fullname"));
-             pessoa1.setId(rs.getInt("id"));
-             pessoa1.setUser_nivel(rs.getInt("endereco"));
-             
-             return pessoa1;
-             
-         }
+            String sql = "select * from customers where user_login = ? and password = ?";
 
-         }catch(SQLException e){
-                e.printStackTrace();
-                 System.out.println("Oops! Ocorreu um erro inesperado!");
-         } catch (Exception ex) {
-            Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    
+            PreparedStatement prep = connection.prepareStatement(sql);
+            prep.setString(1, pessoa.getUsuario());
+            prep.setString(2, pessoa.getSenha());
+            ResultSet rs = prep.executeQuery();
+
+            if(rs.next()){
+                pessoa1.setUsuario(rs.getString("fullname"));
+                pessoa1.setId(rs.getInt("id"));
+                pessoa1.setUser_nivel(rs.getInt("endereco"));
+
+                return pessoa1;
+            }
+
+            }catch(SQLException e){
+                   e.printStackTrace();
+                    System.out.println("Oops! Ocorreu um erro inesperado!");
+            } catch (Exception ex) {
+               Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         return pessoa1;
         
     }

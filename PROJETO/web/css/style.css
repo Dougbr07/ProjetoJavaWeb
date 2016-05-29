@@ -152,7 +152,7 @@ input {
 
 /*styling both submit buttons */
 #wrapper p.button input{
-	width: 30%;
+	width: 20%;
 	cursor: pointer;	
 	background: rgb(61, 157, 179);
 	padding: 8px 5px;
@@ -194,7 +194,7 @@ input {
 }
 p.login.button,
 p.signin.button{
-	text-align: right;
+	text-align: center;
 	margin: 5px 0;
 }
 

@@ -29,27 +29,12 @@
                 </script>
                 
     </head>
-    
-    
         <%
         
             session.invalidate();
         
         %>
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <body onload="validar()">
-      
-        
             <br><br>
             <section>				
                 <div id="container_demo" >
@@ -131,9 +116,5 @@
                 </div>  
             </section>
         </div>
-        
-        
-        
-        
     </body>
 </html>

@@ -4,6 +4,29 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <script language= "JavaScript">
+
+          function telaInicial(){
+
+              location.href="inicialCliente.jsp"
+
+           }
+
+          function detalhesPedido(){
+
+              location.href="inicialCliente.jsp"
+
+           }
+
+          function novoPedido(){
+
+              location.href="inicialCliente.jsp"
+
+           }
+
+
+
+        </script>
     </head>
     <body>
         <br><br>

@@ -1,92 +1,70 @@
-<%-- 
-    Document   : cadastroProduto
-    Created on : 28/05/2016, 13:17:00
-    Author     : Douglas
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
-        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
-        
-    </head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+            <title>Administrador</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+            <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+            <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+            <meta name="author" content="Codrops" />
+            <link rel="shortcut icon" href="../favicon.ico"> 
+            <link rel="stylesheet" type="text/css" href="css/demo.css" />
+            <link rel="stylesheet" type="text/css" href="css/style.css" />
+            <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+        </head>
     <body>
-        
+        <%@include file="cabeçalhoAdm.jsp" %>
+        <section>               
+            <div id="container_demo" >
+                <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                <a class="hiddenanchor" id="toregister"></a>
+                <a class="hiddenanchor" id="tologin"></a>
+                <div id="wrapper">
+                    <div id="login" class="animate form">
+                        <form  action="mysuperscript.php" autocomplete="on"> 
+                            <h1>Administrador</h1> 
+                            <p> 
+                                <label for="descricao" class="uname" data-icon="u" > Descrição </label>
+                                <input id="descricao" name="descricao" required="required" type="text" placeholder="Coxinha"/>
+                            </p>
+                            <p> 
+                                <label for="precoproduto" class="youpasswd" data-icon="p"> Preço do Produto </label>
+                                <input id="precoproduto" name="precoproduto" required="required" type="text" placeholder="10,00" /> 
+                            </p>
+                            
+                            <p> 
+                                <label for="precocentro" class="youpasswd" data-icon="p"> Preço Centro </label>
+                                <input id="precocentro" name="precocentro" required="required" type="text" placeholder="10,5" /> 
+                            </p>
 
-            <br><br>
-            <section>				
-                <div id="container_demo" >
-                   
-              
-                    <div id="wrapper">
-                       
-                        
-                        <div id="login" class="animate form">
-                            <form  method="post"action="ServletCadastrarProduto" autocomplete="on"> 
-                              
-                                 <h1> Cadastrar Produto </h1> 
-                                <p> 
-                                    <label for="usernamesignup" class="uname" >Descrição</label>
-                                    <input id="usernamesignup" name="desc" required="required" type="text" placeholder="Coxinha" />
-                                </p>
-                                <p> 
-                                    <label for="emailsignup" class="youmail" > Preço por Unidade</label>
-                                    <input id="emailsignup" name="preco" required="required" type="text" placeholder="10,00"/> 
-                                </p>
-                                <p> 
-                                    <label for="cpfsigin" class="youpasswd" > Centro </label>
-                                    <input id="cpfsigin" name="centro" required="required" type="text" placeholder=""/>
-                                </p>
-                                <p> 
-                                    <label for="rgsigin" class="youpasswd" > Tipo </label>
-                                    <select>
-                                     <option  value="salgado">SALGADO</option>
-                                     <option value="doce">DOCE</option>
+                            <p> 
+                                <label for="quantidadeproduto" class="quantidadeproduto" data-icon="p"> Quantidade Produto </label>
+                                <input id="precocentro" name="precocentro" required="required" type="text" placeholder="10,50" /> 
+                            </p>
 
-                                    </select>
-                                </p>
-                   
-                                
-                                <p class="signin button"> 
-				<input type="submit" value="Cadastrar"/> 
-				</p>
-                                
-                                <p class="change_link">  
-									
-				<a href="#tologin" onclick="voltar()"> Voltar para pagina principal</a>
-				</p>
-                                
-                                
-                                
-                            </form>
-                        </div>
+                            <p> 
+                                <label for="fotoproduto" class="fotoproduto" data-icon="p"> Foto do Produto </label>
+                                <input id="fotoproduto" name="fotoproduto" required="required" type="text" placeholder="Adicione uma foto para o produto" /> 
+                            </p>
 
-                        
-                       
-						
+                            <p> 
+                                <label for="categoriaproduto" class="categoriaproduto" data-icon="p"> Selecione a Categoria do produto </label>
+
+                                <select id="categoriaproduto" name="categoriaproduto" required="required" type="text" placeholder="Adicione uma foto para o produto"> 
+                                    <option>Doce</option>
+                                    <option>Salgado</option>
+                                </select>
+                            </p>
+                            
+                            <p class="login button"> 
+                                <input type="submit" value="Confirmar" /> 
+                            </p>
+                        </form>
                     </div>
-                </div>  
-            </section>
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+                </div>
+            </div>  
+        </section>
     </body>
 </html>

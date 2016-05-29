@@ -4,6 +4,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
+        <script language= "JavaScript">
+
+            function telaInicial() {
+
+                location.href = "inicialAdm.jsp"
+
+            }
+
+            function detalhesPedido() {
+
+                location.href = "inicialAdm.jsp"
+
+            }
+
+            function novoProduto() {
+
+                location.href = "cadastroProduto.jsp"
+            }
+        
+
+
+        </script>
+        
     </head>
     <body>
         <br><br>

@@ -13,31 +13,6 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
-          
-                
-        <script language= "JavaScript">
-
-          function telaInicial(){
-
-              location.href="inicialCliente.jsp"
-
-           }
-
-          function detalhesPedido(){
-
-              location.href="inicialCliente.jsp"
-
-           }
-
-          function novoPedido(){
-
-              location.href="inicialCliente.jsp"
-
-           }
-
-
-
-        </script>
     </head>
     
     <%

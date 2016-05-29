@@ -1,9 +1,3 @@
-<%-- 
-    Document   : inicialCliente
-    Created on : 28/05/2016, 18:46:30
-    Author     : Douglas
---%>
-
 <%@page import="Bean.Pessoa"%>
 <%@page import="DAO.JdbcPessoaDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,35 +13,6 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
-
-
-        <script language= "JavaScript">
-
-            function telaInicial() {
-
-                location.href = "inicialAdm.jsp"
-
-            }
-
-            function detalhesPedido() {
-
-                location.href = "inicialAdm.jsp"
-
-            }
-
-            function novoProduto() {
-
-                location.href = "jspAdm.jsp"
-
-            }
-
-
-
-        </script>
-
-
-
-
     </head>
     <body>
         <%@include file="cabeçalhoAdm.jsp" %>

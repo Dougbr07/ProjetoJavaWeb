@@ -35,7 +35,7 @@ public class ServletLogin extends HttpServlet {
             session.setMaxInactiveInterval(10*60);
             
             if(pessoaLogada.getUser_nivel() > 0){
-                response.sendRedirect("incialAdm.jsp");
+                response.sendRedirect("inicialAdm.jsp");
             }else{
                 response.sendRedirect("inicialCliente.jsp");
             }

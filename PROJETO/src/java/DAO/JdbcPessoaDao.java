@@ -214,7 +214,7 @@ public class JdbcPessoaDao implements PessoaDao{
             if(rs.next()){
                 pessoa1.setUsuario(rs.getString("fullname"));
                 pessoa1.setId(rs.getInt("id"));
-                pessoa1.setUser_nivel(rs.getInt("endereco"));
+                pessoa1.setUser_nivel(rs.getInt("user_nivel"));
 
                 return pessoa1;
             }

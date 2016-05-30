@@ -12,9 +12,10 @@
 
            }
 
-          function detalhesPedido(){
+          function editarUsuario(){
 
-              location.href="inicialCliente.jsp";
+              location.href="editarUsuarioCliente.jsp"
+
 
            }
 
@@ -23,7 +24,11 @@
               location.href="novoPedido.jsp";
 
            }
+           
+          function sair() {
 
+                location.href = "index.jsp"
+          }
 
 
         </script>
@@ -35,9 +40,9 @@
                 <h1> Area do Cliente </h1> 
                 <p class="signin button"> 
                     <input type="button" onclick="telaInicial()" value="TELA INICIAL"/> 
-                    <input type="button" onclick="detalhesPedido()" value="DETALHES"/> 
+                    <input type="button" onclick="editarUsuario()" value="EDITAR USUARIO"/> 
                     <input type="button" onclick="novoPedido()" value="NOVO PEDIDO"/> 
-                    <input type="button" onclick="novoPedido()" value="SAIR"/>
+                    <input type="button" onclick="sair()" value="SAIR"/>
                 </p>
             </div>
         </section>

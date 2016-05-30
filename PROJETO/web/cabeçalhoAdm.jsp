@@ -41,8 +41,7 @@
                     <input type="button" onclick="telaInicial()" value="TELA INICIAL"/> 
                     <input type="button" onclick="editarUsuario()" value="EDITAR USUARIO"/> 
                     <input type="button" onclick="novoProduto()" value="PRODUTOS"/>
-                    <input type="button" onclick="sair()" value="SAIR"/>
-                    
+                    <input type="button" onclick="sair()" value="SAIR"/>                    
                 </p>
             </div>
         </section>

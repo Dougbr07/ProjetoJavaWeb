@@ -22,7 +22,7 @@
                      function voltar(){
         
                      
-                    location.href="inicialCliente.jsp"
+                    location.href="inicialCliente.jsp";
 
 
                      }

@@ -32,7 +32,7 @@
 
     </head>
     <body>
-        
+        <%@include file="cabeçalhoCliente.jsp" %>
         <%
         
         JdbcPessoaDao p = new JdbcPessoaDao();

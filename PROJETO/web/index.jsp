@@ -16,13 +16,13 @@
                     
                   function validar(){
                    
-                   if(${validar} == 1){
+                   if(${validar} === 1){
                         alert("Login ou Senha Errados");   
                    }
                    
-                   if(${validar} == 2){
+                   if(${validar} === 2){
                        
-                       alert("Login já cadastrado !!!")  
+                       alert("Login já cadastrado !!!");
                    }   
                 } 
                 

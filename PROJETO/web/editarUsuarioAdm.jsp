@@ -55,9 +55,13 @@
                        
                         
                         <div id="login" class="animate form">
-                            <form  method="post"action="ServletLogin" autocomplete="on"> 
+                            <form  method="post"action="ServletEditarUsuarioAdm" autocomplete="on"> 
                               
-                                 <h1> Editar Usuario </h1> 
+                                 <h1> Editar Usuario </h1>
+                                <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">ID</label>
+                                    <input readonly="readonly" id="usernamesignup" name="id" value="<%=p1.getId()%>" required="required" type="text" placeholder="mysuperusername690" />
+                                </p>
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Nome Completo</label>
                                     <input id="usernamesignup" name="nome" value="<%=p1.getNome()%>" required="required" type="text" placeholder="mysuperusername690" />
@@ -76,7 +80,11 @@
                                 </p>
                                 <p> 
                                     <label for="enderecosigin" class="youpasswd" data-icon=">"> Endereço </label>
-                                    <input id="passwordsignup" name="endereco" value="<%=p1.getEndereco()%>" required="required" type="password" placeholder="Rua C, n.82"/>
+                                    <input id="passwordsignup" name="endereco" value="<%=p1.getEndereco()%>" required="required" type="text" placeholder="Rua C, n.82"/>
+                                </p>
+                                <p> 
+                                    <label for="enderecosigin" class="youpasswd" data-icon=">"> Telefone </label>
+                                    <input id="passwordsignup" name="endereco" value="<%=p1.getTelefone()%>" required="required" type="text" placeholder="Rua C, n.82"/>
                                 </p>
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="u"> Usuario </label>

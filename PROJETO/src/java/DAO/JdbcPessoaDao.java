@@ -89,7 +89,7 @@ public class JdbcPessoaDao implements PessoaDao{
          prep.setString(6, pessoa.getEmail());
          prep.setString(7, pessoa.getTelefone());
          prep.setString(8, pessoa.getRg());
-         prep.setInt(8, pessoa.getId());
+         prep.setInt(9, pessoa.getId());
          int update = prep.executeUpdate();
          
          if(update <= 0){
@@ -176,6 +176,7 @@ public class JdbcPessoaDao implements PessoaDao{
             
             while(rs.next()){
                 
+                pessoa.setId(rs.getInt("id"));
                 pessoa.setNome(rs.getString("fullname"));
                 pessoa.setCpf(rs.getString("cpf"));
                 pessoa.setEndereco(rs.getString("endereco"));

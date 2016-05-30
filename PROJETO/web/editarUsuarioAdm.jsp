@@ -57,9 +57,8 @@
                         <div id="login" class="animate form">
                             <form  method="post"action="ServletEditarUsuarioAdm" autocomplete="on"> 
                               
-                                 <h1> Editar Usuario </h1>
                                 <p> 
-                                    <label for="usernamesignup" class="uname" data-icon="u">ID</label>
+                                    <label for="usernamesignup" class="uname" data-icon="p">ID</label>
                                     <input readonly="readonly" id="usernamesignup" name="id" value="<%=p1.getId()%>" required="required" type="text" placeholder="mysuperusername690" />
                                 </p>
                                 <p> 

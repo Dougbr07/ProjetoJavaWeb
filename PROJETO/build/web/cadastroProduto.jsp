@@ -16,15 +16,33 @@
         </head>
     <body>
         <%@include file="cabeçalhoAdm.jsp" %>
-        <section>               
-            <div id="container_demo" >
-                <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-                <a class="hiddenanchor" id="toregister"></a>
-                <a class="hiddenanchor" id="tologin"></a>
-                <div id="wrapper">
-                    <div id="login" class="animate form">
-                        <form  action="mysuperscript.php" autocomplete="on"> 
-                            <h1>Administrador</h1> 
+        
+        
+        <section>				
+                <div id="container_demo" >
+                  
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                   
+                    <div id="wrapper">
+                        
+                        <div id="login" class="animate form">
+                            
+
+                            
+                            LISTA DE PRODUTOS EM TABELA
+                            
+                                
+                                <p class="change_link">
+                                    <a href="#toregister" class="to_register">NOVO PRODUTO</a>
+				</p>
+                                
+                           
+                        </div>
+
+                        <div id="register" class="animate form">
+                            <form  method="post" action="ServletCadastro" autocomplete="on"> 
+                                <center>NOVO PRODUTO</center>
                             <p> 
                                 <label for="descricao" class="uname" data-icon="u" > Descrição </label>
                                 <input id="descricao" name="descricao" required="required" type="text" placeholder="Coxinha"/>
@@ -50,7 +68,7 @@
                             </p>
 
                             <p> 
-                                <label for="categoriaproduto" class="categoriaproduto" data-icon="p"> Selecione a Categoria do produto </label>
+                                <label for="categoriaproduto" class="categoriaproduto"> Selecione a Categoria do produto </label>
 
                                 <select id="categoriaproduto" name="categoriaproduto" required="required" type="text" placeholder="Adicione uma foto para o produto"> 
                                     <option>Doce</option>
@@ -59,12 +77,24 @@
                             </p>
                             
                             <p class="login button"> 
-                                <input type="submit" value="Confirmar" /> 
+                                <input type="submit" value="Cadastrar" /> 
+                            </p>
+                           
+                            <p class="change_link">                      
+                                <a href="#tologin" class="to_register"> VOLTAR A LISTA DE PRODUTOS </a>
                             </p>
                         </form>
                     </div>
-                </div>
-            </div>  
-        </section>
+                                
+                          
+                        </div>
+						
+                    </div>
+                </div>  
+            </section>
+        
+  
+        
+        
     </body>
 </html>

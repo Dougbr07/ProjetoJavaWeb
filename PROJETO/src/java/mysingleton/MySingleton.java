@@ -23,7 +23,7 @@ public class MySingleton {
             try{
             
                 Class.forName("org.postgresql.Driver");
-                connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "123456");
+                connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "isabelle");
                 
             
             }catch(SQLException | ClassNotFoundException e){

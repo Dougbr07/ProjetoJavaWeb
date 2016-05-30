@@ -19,7 +19,7 @@
         
         
         <section>				
-                <div id="container_demo" >
+            
                   
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
@@ -91,8 +91,8 @@
                           
                         </div>
 						
-                    </div>
-                </div>  
+                
+             
             </section>
         
   

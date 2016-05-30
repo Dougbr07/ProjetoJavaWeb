@@ -37,7 +37,7 @@
     <body onload="validar()">
             <br><br>
             <section>				
-                <div id="container_demo" >
+               
                   
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
@@ -120,6 +120,6 @@
                     </div>
                 </div>  
             </section>
-        </div>
+        
     </body>
 </html>

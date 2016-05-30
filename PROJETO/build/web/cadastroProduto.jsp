@@ -79,10 +79,12 @@
                             <p class="login button"> 
                                 <input type="submit" value="Cadastrar" /> 
                             </p>
+                            
                            
                             <p class="change_link">                      
                                 <a href="#tologin" class="to_register"> VOLTAR A LISTA DE PRODUTOS </a>
                             </p>
+                            
                         </form>
                     </div>
                                 

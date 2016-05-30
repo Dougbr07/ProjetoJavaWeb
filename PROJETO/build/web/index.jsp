@@ -58,6 +58,7 @@
                                     <input type="submit" value="Entrar" /> 
 				</p>
                                
+                                
                                 <p class="change_link">
                                     Não é cliente ?
                                     <a href="#toregister" class="to_register">Cadastre-se</a>
@@ -90,7 +91,7 @@
                                     <input id="passwordsignup" name="endereco" required="required" type="text" placeholder="Rua C, n.82"/>
                                 </p>
                                 <p> 
-                                    <label for="enderecosigin" class="youpasswd" data-icon="f"> Telefone </label>
+                                    <label for="usernamesignup" class="youpasswd" data-icon="f"> Telefone </label>
                                     <input id="passwordsignup" name="telefone" required="required" type="text" placeholder="(xx)xxxx-xxxx"/>
                                 </p>
                                 <p> 
@@ -103,12 +104,16 @@
                                 </p>
                    
                                 <p class="signin button"> 
-									<input type="submit" value="Cadastrar"/> 
-								</p>
+				
+                                    <input type="submit" value="Cadastrar"/> 
+                                                                       
+				</p>
                                 <p class="change_link">  
-									Já é cliente ?
-									<a href="#tologin" class="to_register"> Faça o Login </a>
-								</p>
+                                    
+						Já é cliente ?
+                                                
+				<a href="#tologin" class="to_register"> Faça o Login </a>
+				</p>
                             </form>
                         </div>
 						

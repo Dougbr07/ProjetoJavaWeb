@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Douglas
  */
-@WebServlet(name = "ServletEditarUsuario", urlPatterns = {"/ServletEditarUsuario"})
+@WebServlet(name = "ServletEditarUsuarioAdm", urlPatterns = {"/ServletEditarUsuarioAdm"})
 public class ServletEditarUsuarioAdm extends HttpServlet {
 
 
@@ -29,6 +29,7 @@ public class ServletEditarUsuarioAdm extends HttpServlet {
             throws ServletException, IOException {
         
        Pessoa novaPessoa = new Pessoa();
+       novaPessoa.setId(Integer.parseInt(request.getParameter("id")));
        novaPessoa.setNome(request.getParameter("nome"));
        novaPessoa.setCpf(request.getParameter("cpf"));
        novaPessoa.setUsuario(request.getParameter("usuario"));

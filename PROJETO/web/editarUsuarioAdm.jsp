@@ -84,7 +84,7 @@
                                 </p>
                                 <p> 
                                     <label for="enderecosigin" class="youpasswd" data-icon=">"> Telefone </label>
-                                    <input id="passwordsignup" name="endereco" value="<%=p1.getTelefone()%>" required="required" type="text" placeholder="Rua C, n.82"/>
+                                    <input id="passwordsignup" name="telefone" value="<%=p1.getTelefone()%>" required="required" type="text" placeholder="Rua C, n.82"/>
                                 </p>
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="u"> Usuario </label>

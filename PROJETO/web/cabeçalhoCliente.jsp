@@ -8,19 +8,19 @@
 
           function telaInicial(){
 
-              location.href="inicialCliente.jsp"
+              location.href="inicialCliente.jsp";
 
            }
 
           function detalhesPedido(){
 
-              location.href="inicialCliente.jsp"
+              location.href="inicialCliente.jsp";
 
            }
 
           function novoPedido(){
 
-              location.href="inicialCliente.jsp"
+              location.href="novoPedido.jsp";
 
            }
 

@@ -380,3 +380,36 @@ p.change_link{
 	height: 90px;
 	background: transparent;
 }
+
+/*posicionamentos divs dinamicas*/
+div #container_demo{
+    background-color: appworkspace;
+    height: 100px;
+}
+
+#container_demo img{
+    margin-top: 5%; 
+    height: 48px;
+    width: 48px;
+}
+
+#container_demo a{
+    position: absolute;
+    margin-top: 15%;
+    right:20px;
+}
+
+#container_demo #price{
+    position: absolute;
+    margin-top: 3%;
+    right:20px;
+}
+
+#container_demo #description{
+    position: absolute;
+    margin-top: 3%;
+    left:60px;
+}
+
+
+

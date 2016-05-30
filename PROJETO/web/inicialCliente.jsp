@@ -42,7 +42,6 @@
     
     <body>
         <%@include file="cabeçalhoCliente.jsp"%>
-        <section>    
             <div id="wrapper">
                 <table width="100%" border="1">
                     <tr>
@@ -73,7 +72,5 @@
                     </tr>  
                 </table>
             </div>
-        </section>   
-         
     </body>
 </html>

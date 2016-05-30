@@ -27,50 +27,70 @@
         }
         
         Pessoa pCliente = new Pessoa();
-        String nivel;
         JdbcPessoaDao p = new JdbcPessoaDao();
         String idCliente = session.getAttribute("id").toString();
         pCliente = p.search(Integer.parseInt(idCliente));
-        if(pCliente.getUser_nivel() > 0){
-            nivel = "Administrador";
-        }else{
-            nivel = "Cliente";
-        }
+
         
     %>
     
     
     <body>
         <%@include file="cabeçalhoCliente.jsp"%>
-            <div id="wrapper">
-                <table width="100%" border="1">
-                    <tr>
-                        <td>Nome:</td>
-                        <td><%= pCliente.getNome() %></td> 
-                        <td>Cpf:</td>
-                        <td><%= pCliente.getCpf() %></td>
+        <br>
+             <div id="wrapper">
+                       
+                        
+                        <div id="login" class="animate form">
+                            <form  method="post"action="ServletEditarUsuario" autocomplete="on"> 
+                              
+                              <table width="100%">
+                             
+                    <tr style=" height:30px">
+                        <td><span class="estiloLetra">NOME:</span> <%= pCliente.getNome() %></td>
+                        
+                        <td><span class="estiloLetra">CPF: </span> <%= pCliente.getCpf() %></td> 
+                        
                     </tr>
-
-                    <tr>
-                        <td>Rg:</td>
-                        <td><%= pCliente.getRg() %></td>
-                        <td>Email:</td>
-                        <td><%= pCliente.getEmail() %></td>
+                    
+                    <tr style=" height:30px">
+                        <td><span class="estiloLetra">RG: </span><%= pCliente.getRg() %></td>
+                        
+                        <td><span class="estiloLetra">E-MAIL: </span><%= pCliente.getEmail() %></td>
+                       
                     </tr> 
 
-                    <tr>
-                        <td>Endereço:</td>
-                        <td><%= pCliente.getEndereco() %></td>
-                        <td>Telefone:</td>
-                        <td><%= pCliente.getTelefone() %></td>
+                    <tr style=" height:30px">
+                        <td><span class="estiloLetra">ENDEREÇO:</span> <%= pCliente.getEndereco() %></td>
+                        
+                        <td><span class="estiloLetra">TELEFONE:</span> <%= pCliente.getTelefone() %></td>
+                        
                     </tr> 
-                    <tr>
-                        <td>Usuario:</td>
-                        <td><%= pCliente.getUsuario() %></td>
-                        <td>Nivel de Acesso:</td>
-                        <td><%= nivel %></td>
-                    </tr>  
-                </table>
-            </div>
+                    <tr style=" height:30px">
+                        <td><span class="estiloLetra">USUARIO:</span> <%= pCliente.getUsuario() %></td>
+                       
+                        <td><span class="estiloLetra">NV. ACESSO: </span>Cliente</td>
+                   
+                    </tr> 
+                              
+                </table>  
+                             
+                            </form>
+                        </div>
+
+                        
+                       
+						
+                    </div>
+               
+          
+       
+           
+            
+            
+            
+            
+            
+           
     </body>
 </html>

@@ -411,5 +411,14 @@ div #container_demo{
     left:60px;
 }
 
+.estiloLetra{
+    
+    color: black ; 
+    text-shadow: black 0.1em 0.1em 0.2em;
+    
+    
+    
+}
+
 
 

@@ -37,7 +37,7 @@ a.hiddenanchor{
 	width: 60%;
 	right: 0px;	
 	margin: 0px auto;	
-	width: 500px;
+	width: 550px;
 	position: relative;	
 }
 /**** Styling the form elements **/
@@ -151,7 +151,7 @@ input {
 
 /*styling both submit buttons */
 #wrapper p.button input{
-	width: 20%;
+	width: 22%;
 	cursor: pointer;	
 	background: rgb(61, 157, 179);
 	padding: 8px 5px;

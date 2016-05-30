@@ -28,8 +28,6 @@
 
                 location.href = "index.jsp"
             }
-        
-
 
         </script>
         
@@ -44,6 +42,7 @@
                     <input type="button" onclick="editarUsuario()" value="EDITAR USUARIO"/> 
                     <input type="button" onclick="novoProduto()" value="PRODUTOS"/>
                     <input type="button" onclick="sair()" value="SAIR"/>
+                    
                 </p>
             </div>
         </section>

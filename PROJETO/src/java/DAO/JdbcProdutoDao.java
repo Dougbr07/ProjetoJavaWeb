@@ -5,14 +5,12 @@
  */
 package DAO;
 
-import Bean.Pessoa;
 import Bean.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import mysingleton.MySingleton;
@@ -28,15 +26,12 @@ public class JdbcProdutoDao implements ProdutoDao{
         this.connection = MySingleton.getConnection();
     }
 
-    
-    
-    
     @Override
     public boolean insert(Produto produto) {
        
         try{
            
-         String sql = "insert into produto(nome,cpf,login,senha) values(?,?,?,?)";
+         String sql = "insert into products(description,price,centro,amount, image_link, categories_id) values(?,?,?,?,?,?)";
          
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setString(1, null);
@@ -60,7 +55,7 @@ public class JdbcProdutoDao implements ProdutoDao{
          try{
 
        
-         String sql = "delete from pessoa where id_pessoa = ?";
+         String sql = "delete from products where id_pessoa = ?";
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setInt(1, id);
          prep.executeUpdate();
@@ -74,25 +69,28 @@ public class JdbcProdutoDao implements ProdutoDao{
     }
 
     @Override
-    public List<Produto> list() {
+    public ArrayList<Produto> list() {
         
-         List<Produto> produtos = new ArrayList<>();
+        ArrayList<Produto> produtos = new ArrayList<>();
         
         try{
         
-            String sql = "select * from pessoa";
+            String sql = "select * from products";
             PreparedStatement prep = connection.prepareStatement(sql);
             ResultSet rs = prep.executeQuery();
             
             while(rs.next()){
         
                 Produto produto = new Produto();
-               
-
+                produto.setDescription(rs.getString("description"));
+                produto.setPrice(rs.getDouble("price"));
+                produto.setCentro(rs.getDouble("centro"));
+                produto.setAmount(rs.getInt("amount"));
+                produto.setImage(rs.getString("image_link"));
+                produto.setCategory(rs.getInt("categories_id"));
                 produtos.add(produto);
 
             }
-        
         
         } catch (SQLException ex) {
             Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -116,13 +114,12 @@ public class JdbcProdutoDao implements ProdutoDao{
             
             while(rs.next()){
                 
-                produto.setDescricao(rs.getString("descricao"));
-                produto.setCentro(rs.getDouble("centro"));
-                produto.setPrecoUnidade(rs.getDouble("centro"));
-                produto.setQuantidade(rs.getInt("quantidade"));
-                produto.setImagem(rs.getString("imagem"));
+                produto.setDescription(rs.getString("description"));
+                produto.setCentro(rs.getDouble("price"));
+                produto.setPrice(rs.getDouble("centro"));
+                produto.setAmount(rs.getInt("amount"));
+                produto.setImage(rs.getString("image_link"));
   
-
             }
             return produto;
         
@@ -140,7 +137,7 @@ public class JdbcProdutoDao implements ProdutoDao{
         
          try{
 
-         String sql = "update produto set nome = ?, cpf = ?, login = ?, senha = ? where id_produto = ?";
+         String sql = "update products set description = ?, price = ?, centro = ?, amount = ?, image_link = ?, categories_id = ? where id_produto = ?";
          
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setString(1, null);

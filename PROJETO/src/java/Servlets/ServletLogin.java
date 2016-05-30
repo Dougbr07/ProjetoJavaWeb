@@ -3,6 +3,7 @@ package Servlets;
 import Bean.Pessoa;
 import DAO.JdbcPessoaDao;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,9 @@ public class ServletLogin extends HttpServlet {
        JdbcPessoaDao pessoaDao = new JdbcPessoaDao();
        Pessoa pessoaLogada = new Pessoa();
        pessoaLogada = pessoaDao.validar(novaPessoa);
+       
+       
+       
        int erro = 1;
         
        if(pessoaLogada.getUsuario() instanceof String){

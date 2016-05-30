@@ -1,3 +1,6 @@
+<%@page import="Bean.Produto"%>
+<%@page import="DAO.JdbcProdutoDao"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="Bean.Pessoa"%>
 <%@page import="DAO.JdbcPessoaDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -22,10 +25,7 @@
         r.forward( request, response );  
 
         }
-
-
-
-
+        
         Pessoa pCliente = new Pessoa();
         String nivel;
         JdbcPessoaDao p = new JdbcPessoaDao();
@@ -36,9 +36,10 @@
         }else{
             nivel = "Cliente";
         }
+        
     %>
     
-
+    
     <body>
         <%@include file="cabeçalhoCliente.jsp"%>
         <section>    
@@ -72,6 +73,7 @@
                     </tr>  
                 </table>
             </div>
-        </section>            
+        </section>   
+         
     </body>
 </html>

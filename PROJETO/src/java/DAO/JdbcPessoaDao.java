@@ -7,11 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import mysingleton.MySingleton;
-
 
 public class JdbcPessoaDao implements PessoaDao{
     Connection connection;
@@ -130,9 +128,9 @@ public class JdbcPessoaDao implements PessoaDao{
     }
     
     @Override
-    public List<Pessoa> list(){
+    public ArrayList<Pessoa> list(){
         
-        List<Pessoa> pessoas = new ArrayList<>();
+        ArrayList<Pessoa> pessoas = new ArrayList<>();
         
         try{
         
@@ -149,8 +147,8 @@ public class JdbcPessoaDao implements PessoaDao{
                 pessoa.setRg(rs.getString("rg"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setFoto(rs.getString("image_link"));
-                pessoa.setUsuario(rs.getString("usuario"));
-                pessoa.setSenha(rs.getString("senha"));
+                pessoa.setUsuario(rs.getString("user_login"));
+                pessoa.setSenha(rs.getString("password"));
                 pessoa.setTelefone(rs.getString("telefone"));
                 pessoas.add(pessoa);
 
@@ -158,7 +156,7 @@ public class JdbcPessoaDao implements PessoaDao{
         
         
         } catch (SQLException ex) {
-            Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erro" + ex);
         }
 
     return pessoas;

@@ -11,66 +11,75 @@ package Bean;
  */
 public class Produto {
     
-    private String descricao;
-    private double precoUnidade;
-    private int quantidade;
-    private String imagem;
+    private String description;
+    private double price;
+    private int amount;
+    private String image;
     private double centro;
+    private int category;
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
+    }
 
     /**
      * @return the descricao
      */
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * @param descricao the descricao to set
+     * @param description the descricao to set
      */
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * @return the precoUnidade
      */
-    public double getPrecoUnidade() {
-        return precoUnidade;
+    public double getPrice() {
+        return price;
     }
 
     /**
-     * @param precoUnidade the precoUnidade to set
+     * @param price the precoUnidade to set
      */
-    public void setPrecoUnidade(double precoUnidade) {
-        this.precoUnidade = precoUnidade;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     /**
      * @return the quantidade
      */
-    public int getQuantidade() {
-        return quantidade;
+    public int getAmount() {
+        return amount;
     }
 
     /**
-     * @param quantidade the quantidade to set
+     * @param amount the quantidade to set
      */
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     /**
      * @return the imagem
      */
-    public String getImagem() {
-        return imagem;
+    public String getImage() {
+        return image;
     }
 
     /**
-     * @param imagem the imagem to set
+     * @param image the imagem to set
      */
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     /**

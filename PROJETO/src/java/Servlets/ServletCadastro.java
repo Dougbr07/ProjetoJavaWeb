@@ -44,7 +44,7 @@ public class ServletCadastro extends HttpServlet {
        int validar = 2;
        
        if(validarCadastro){
-        RequestDispatcher r = request.getRequestDispatcher( "exibir.jsp" );
+        RequestDispatcher r = request.getRequestDispatcher( "index.jsp" );
         request.setAttribute("pessoa", novaPessoa);
         r.forward( request, response );  
        }else{

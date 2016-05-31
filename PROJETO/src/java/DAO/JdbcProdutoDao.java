@@ -34,7 +34,12 @@ public class JdbcProdutoDao implements ProdutoDao{
          String sql = "insert into products(description,price,centro,amount, image_link, categories_id) values(?,?,?,?,?,?)";
          
          PreparedStatement prep = connection.prepareStatement(sql);
-         prep.setString(1, null);
+         prep.setString(1, produto.getDescription());
+         prep.setDouble(2, produto.getPrice());
+         prep.setDouble(3, produto.getCentro());
+         prep.setDouble(4, produto.getAmount());
+         prep.setString(5, produto.getImage());
+         prep.setInt(6, produto.getCategory());
 
          prep.executeUpdate();
          return true;

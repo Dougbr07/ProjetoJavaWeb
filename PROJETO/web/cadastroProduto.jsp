@@ -41,7 +41,7 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  method="post" action="ServletCadastro" autocomplete="on"> 
+                            <form  method="post" action="ServletCadastroProduto" autocomplete="on"> 
                                 <center>NOVO PRODUTO</center>
                             <p> 
                                 <label for="descricao" class="uname" data-icon="u" > Descrição </label>
@@ -59,7 +59,7 @@
 
                             <p> 
                                 <label for="quantidadeproduto" class="quantidadeproduto" data-icon="p"> Quantidade Produto </label>
-                                <input id="precocentro" name="precocentro" required="required" type="text" placeholder="10,50" /> 
+                                <input id="precocentro" name="quatidade" required="required" type="text" placeholder="10,50" /> 
                             </p>
 
                             <p> 

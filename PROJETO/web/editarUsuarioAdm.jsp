@@ -17,18 +17,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
                 
-                <script>
-                    
-                     function voltar(){
-        
-                     
-                         location.href="inicialAdm.jsp"
 
-
-                     }
-                    
-                    
-                </script>
 
     </head>
     <body>
@@ -96,10 +85,6 @@
                    
                                 <p class="signin button"> 
 									<input type="submit" value="Editar"/> 
-								</p>
-                                <p class="change_link">  
-									
-									<a href="#tologin" onclick="voltar()"> Voltar para pagina principal</a>
 								</p>
                                 
                                 

@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="Bean.Produto"%>
+<%@page import="DAO.JdbcProdutoDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,9 +31,27 @@
                         
                         <div id="login" class="animate form">
                             
+                            <% 
+                                 JdbcProdutoDao jdp = new JdbcProdutoDao();
+                                 ArrayList<Produto> lista = jdp.list();
+                              for (Produto element : lista ) {
+                             %>
+                                <div id="container_demo">
+                                    <img src="<%=element.getImage()%>"> 
+                                    <span id="description"><%=element.getDescription()%></span>
+                                    <span id="price"><%="Preço unidade: R$ " + element.getPrice()%></span>
+                                    <span id="center"><%="Centro: R$ " + element.getCentro()%></span>
+                                    <span id="amount"><%="Quatidade:" + element.getAmount()%></span>
+                                    <span onclick="submit()" id="edit" style="cursor: pointer;color:blue">Editar Produto</span>
+                                    <input type="text" name="<%=element.getId()%>"style="display: none">
+
+                                </div>
+                                <br>
+                            <%
+                            }
+                            %>
 
                             
-                            LISTA DE PRODUTOS EM TABELA
                             
                                 
                                 <p class="change_link">
@@ -42,7 +63,12 @@
 
                         <div id="register" class="animate form">
                             <form  method="post" action="ServletCadastroProduto" autocomplete="on"> 
-                                <center>NOVO PRODUTO</center>
+                                <center>NOVO PRODUTO<br><br></center>
+     
+                            <p> 
+                                <label for="descricao" class="uname" > Foto Produto </label>
+                                <input  id="fotoproduto" name="fotoproduto" type="file" value="nome"/> 
+                            </p>   
                             <p> 
                                 <label for="descricao" class="uname" data-icon="u" > Descrição </label>
                                 <input id="descricao" name="descricao" required="required" type="text" placeholder="Coxinha"/>
@@ -60,11 +86,6 @@
                             <p> 
                                 <label for="quantidadeproduto" class="quantidadeproduto" data-icon="p"> Quantidade Produto </label>
                                 <input id="precocentro" name="quatidade" required="required" type="text" placeholder="10,50" /> 
-                            </p>
-
-                            <p> 
-                                <label for="fotoproduto" class="fotoproduto" data-icon="p"> Foto do Produto </label>
-                                <input id="fotoproduto" name="fotoproduto" required="required" type="text" placeholder="Adicione uma foto para o produto" /> 
                             </p>
 
                             <p> 

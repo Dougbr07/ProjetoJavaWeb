@@ -71,6 +71,10 @@
                             <form  method="post" action="ServletCadastro" autocomplete="on"> 
                                 <h1> Cadastro de Cliente </h1> 
                                 <p> 
+                                    <label for="usernamesignup" class="uname">Foto</label>
+                                    <input id="usernamesignup" name="foto" type="file"/>
+                                </p>
+                                <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Nome Completo</label>
                                     <input id="usernamesignup" name="nome" required="required" type="text" placeholder="João da Silva" />
                                 </p>

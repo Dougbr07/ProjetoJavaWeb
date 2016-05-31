@@ -13,9 +13,9 @@
 
             }
 
-            function editarUsuario() {
+            function listaClientes() {
 
-                location.href = "editarUsuarioAdm.jsp"
+                location.href = "listaClientes.jsp"
 
             }
 
@@ -39,7 +39,7 @@
                 <h1> Area do Administrador </h1> 
                 <p class="signin button"> 
                     <input type="button" onclick="telaInicial()" value="TELA INICIAL"/> 
-                    <input type="button" onclick="editarUsuario()" value="EDITAR USUARIO"/> 
+                    <input type="button" onclick="listaClientes()" value="CLIENTES"/> 
                     <input type="button" onclick="novoProduto()" value="PRODUTOS"/>
                     <input type="button" onclick="sair()" value="SAIR"/>                    
                 </p>

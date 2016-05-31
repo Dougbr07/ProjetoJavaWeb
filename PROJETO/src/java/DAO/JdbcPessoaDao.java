@@ -48,7 +48,7 @@ public class JdbcPessoaDao implements PessoaDao{
        if(!(validarCadastroLogin(pessoa))){ 
        try{
            
-         String sql = "insert into customers(fullname,cpf,user_login,password,endereco,rg,email,user_nivel,telefone) values(?,?,?,?,?,?,?,0,?)";
+         String sql = "insert into customers(fullname,cpf,user_login,password,endereco,rg,email,user_nivel,telefone,image_link) values(?,?,?,?,?,?,?,0,?,?)";
          
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setString(1, pessoa.getNome());
@@ -59,6 +59,7 @@ public class JdbcPessoaDao implements PessoaDao{
          prep.setString(6, pessoa.getRg());
          prep.setString(7, pessoa.getEmail());
          prep.setString(8, pessoa.getTelefone());
+         prep.setString(9, pessoa.getFoto());
          prep.executeUpdate();
          return true;
 

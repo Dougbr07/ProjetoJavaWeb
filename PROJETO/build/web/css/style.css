@@ -360,7 +360,7 @@ p.change_link{
 
 /** yerk some ugly IE fixes 'cause I know someone will ask "why does it look ugly in IE?", no matter how many warnings I will put in the article */
 
-.lt8 #wrapper input{
+.lt8 #wrapper input:not([id="not"]){
 	padding: 10px 5px 10px 32px;
     width: 92%;
 }
@@ -395,20 +395,37 @@ div #container_demo{
 
 #container_demo a{
     position: absolute;
-    margin-top: 15%;
+    margin-top: 12%;
     right:20px;
 }
 
 #container_demo #price{
     position: absolute;
     margin-top: 3%;
-    right:20px;
+    right:40px;
+}
+#container_demo #amount{
+    position: absolute;
+    margin-top: 8%;
+    right:40px;
+}
+
+#container_demo #edit{
+    position: absolute;
+    margin-top: 13%;
+    right:40px;
+}
+
+#container_demo #center{
+    position: absolute;
+    margin-top: 13%;
+    right:340px;
 }
 
 #container_demo #description{
     position: absolute;
     margin-top: 3%;
-    left:60px;
+    left:95px;
 }
 
 .estiloLetra{

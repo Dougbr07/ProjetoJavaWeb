@@ -74,7 +74,9 @@
                     </tr> 
                               
                 </table>  
-                             
+                         <p class="change_link">                      
+                                <a href="editarUsuarioCliente.jsp" class="to_register"> EDITAR USUARIO </a>
+                            </p>
                             </form>
                         </div>
 

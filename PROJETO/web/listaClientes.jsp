@@ -1,3 +1,5 @@
+<%@page import="DAO.JdbcPessoaDao"%>
+<%@page import="Bean.Pessoa"%>
 <%@page import="Bean.Produto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.JdbcProdutoDao"%>
@@ -27,33 +29,30 @@
         </script>
     </head>
     <body>
-        <%@include file="cabeçalhoCliente.jsp" %>
+        <%@include file="cabeçalhoAdm.jsp" %>
         <div id="wrapper">
            
            
             <div id="login" class="animate form">
-                <center>NOVO PEDIDO</center><BR>
+                <center>CLIENTES</center><BR>
                 <form class="animate form">
                 
                 <% 
-            JdbcProdutoDao jdp = new JdbcProdutoDao();
-            ArrayList<Produto> lista = jdp.list();
-                for (Produto element : lista ) {
+            JdbcPessoaDao jdp = new JdbcPessoaDao();
+            ArrayList<Pessoa> lista = jdp.list();
+                for (Pessoa element : lista ) {
                 %>
                     <div id="container_demo">
-                        <img src="<%=element.getImage()%>"> 
-                        <span id="description"><%=element.getDescription()%></span>
-                        <span id="price"><%="Preço unidade: R$ " + element.getPrice()%></span>
-                        <span id="center"><%="Centro: R$ " + element.getCentro()%></span>
-                        <button>-100</button><button>-</button><span id="qtd<%=element.getId()%>">0</span><button>+</button><button>+100</button>
+                        <img src="<%=element.getFoto()%>"> 
+                        <span id="description"><%=element.getNome()%></span>
+                        <span id="price"><%="Nivel de Usuario: " + element.getUser_nivel()%></span>
+                        <span><%="Telefone: " + element.getTelefone()%></span>
 
                     </div>
                     <br>
                 <%
                 }
                 %>
-                
-                <input type="submit" value="Fechar Pedido">
                 </form>
             </div>
                 

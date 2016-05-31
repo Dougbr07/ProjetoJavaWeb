@@ -2,6 +2,7 @@ package Bean;
 
 public class Produto {
     
+    private int id;
     private String description;
     private double price;
     private int amount;
@@ -85,5 +86,19 @@ public class Produto {
      */
     public void setCentro(double centro) {
         this.centro = centro;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }

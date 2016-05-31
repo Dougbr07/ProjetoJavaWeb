@@ -37,7 +37,8 @@ public class ServletCadastro extends HttpServlet {
        novaPessoa.setRg(request.getParameter("rg"));
        novaPessoa.setEmail(request.getParameter("email"));
        novaPessoa.setEndereco(request.getParameter("endereco"));
-        novaPessoa.setTelefone(request.getParameter("telefone"));
+       novaPessoa.setTelefone(request.getParameter("telefone"));
+       novaPessoa.setFoto(request.getParameter("foto"));
        
        JdbcPessoaDao pessoa = new JdbcPessoaDao();
        boolean validarCadastro = pessoa.insert(novaPessoa);
@@ -45,7 +46,6 @@ public class ServletCadastro extends HttpServlet {
        
        if(validarCadastro){
         RequestDispatcher r = request.getRequestDispatcher( "index.jsp" );
-        request.setAttribute("pessoa", novaPessoa);
         r.forward( request, response );  
        }else{
         RequestDispatcher r = request.getRequestDispatcher( "index.jsp" );

@@ -46,7 +46,32 @@
         
             }    
         }
+        function adicionar100(id){
+        
+            valor = document.getElementById(id).value;
+            valor = parseInt(valor) + 100;
+            document.getElementById(id).value = valor;
+            
+        }
+        
+        function retirar100(id){
+       
+        valor = document.getElementById(id).value;
+            
+            if(valor > 99){    
 
+                valor = parseInt(valor) - 100;
+                document.getElementById(id).value = valor;
+        
+            }
+            
+            if(valor <= 99){    
+
+
+                document.getElementById(id).value = '0';
+        
+            }
+        }
         
         </script>
     </head>
@@ -96,19 +121,25 @@
                        %>
                            <div id="container_demo">
                                <img src="<%=element.getImage()%>"> 
-                               <span id="description"><%=element.getDescription()%></span>
+                               <span id="description" style="font-size:20px;font-family: cursive"><%=element.getDescription()%></span>
                                <span id="price"><%="Preço unidade: R$ " + element.getPrice()%></span>
                                <span id="center"><%="Centro: R$ " + element.getCentro()%></span>
-                               <span style="margin-left: 270px">
+                               <span style="margin-left: 260px">
                                
+                               <span class="buttonStyle2" onclick="retirar100(<%=element.getId()%>)">
+                                   <
+                               </span>
                                <span class="buttonStyle" onclick="retirar(<%=element.getId()%>)">
                                    -
                                </span>
 
-                               <input value ="0" style="height: 10px;width: 20px;text-align: center;" id="<%=element.getId()%>"> 
+                               <input readonly="readonly" value ="0" style="height: 10px;width: 20px;text-align: center" id="<%=element.getId()%>"> 
                                 
                                 <span  class="buttonStyle" onclick="adicionar(<%=element.getId()%>)">
                                    +
+                               </span>
+                               <span class="buttonStyle2" onclick="adicionar100(<%=element.getId()%>)">
+                                   >
                                </span>
                                    
                                </span>

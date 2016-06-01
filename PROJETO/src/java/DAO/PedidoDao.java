@@ -6,6 +6,7 @@
 package DAO;
 
 import Bean.Pedido;
+import Bean.Produto;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
  */
 public interface PedidoDao {
     
-    public boolean insert(Pedido pedido);
+    public boolean insert(Pedido pedido, List<Produto> produtos);
     public void remove (int id);
     public List<Pedido> list();
     public Pedido search(int id);

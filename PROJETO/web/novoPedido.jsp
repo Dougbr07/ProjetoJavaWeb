@@ -110,14 +110,16 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  method="post" action="ServletCadastroPedido" autocomplete="on"> 
+                            <form  method="post" action="ServletFazerPedido" autocomplete="on"> 
                                 <center>NOVO PEDIDO<br><br></center>
      
-                           
+                                <input name="idCliente" style="display: none" value="<%=session.getAttribute("id")%>">
                            <% 
                          JdbcProdutoDao jdp = new JdbcProdutoDao();
                          ArrayList<Produto> lista = jdp.list();
+                         int idCont = 0;
                          for (Produto element : lista ) {
+                             idCont++;
                        %>
                            <div id="container_demo">
                                <img src="<%=element.getImage()%>"> 
@@ -133,8 +135,8 @@
                                    -
                                </span>
 
-                               <input readonly="readonly" value ="0" style="height: 10px;width: 20px;text-align: center" id="<%=element.getId()%>"> 
-                                
+                               <input readonly="readonly" value ="0" style="height: 10px;width: 20px;text-align: center" name="<%=element.getId()%>"id="<%=element.getId()%>"> 
+                               <input type="text" style="display:none" value="<%=element.getId()%>" name="idCont<%=idCont%>">
                                 <span  class="buttonStyle" onclick="adicionar(<%=element.getId()%>)">
                                    +
                                </span>

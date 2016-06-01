@@ -25,6 +25,35 @@ public class JdbcProdutoDao implements ProdutoDao{
     public JdbcProdutoDao() {
         this.connection = MySingleton.getConnection();
     }
+    
+    
+    public int numeroDeProdutos(){
+    
+    
+    int num = 0;
+            try{
+        
+            String sql = "SELECT COUNT (*) AS QTDE FROM products";
+            PreparedStatement prep = connection.prepareStatement(sql);
+            ResultSet rs = prep.executeQuery();
+            
+            while(rs.next()){
+                
+                num = rs.getInt("qtde");
+
+  
+            }
+            return num;
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    return num;
+    
+    
+    
+    }
 
     @Override
     public boolean insert(Produto produto) {

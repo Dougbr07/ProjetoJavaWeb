@@ -32,6 +32,7 @@
         <%
         
             session.invalidate();
+            
         
         %>
     <body onload="validar()">

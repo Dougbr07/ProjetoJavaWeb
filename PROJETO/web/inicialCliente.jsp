@@ -61,7 +61,6 @@
     
     <body onload="test()">
         <%@include file="cabeçalhoCliente.jsp"%>
-      ${validarPedido}
         <br>
              <div id="wrapper">
                         

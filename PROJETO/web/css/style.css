@@ -386,7 +386,34 @@ div #container_demo{
     background-color: appworkspace;
     height: 100px;
 }
+div #container_demo2{
+    background-color: appworkspace;
+    height: 25px;
+}
 
+#container_demo2 #id{
+    position: absolute;
+    margin-top: 2px;
+    
+    right:80%;
+}
+#container_demo2 #date{
+    position: absolute;
+    margin-top: 2px;
+    right:50%;
+}
+
+#container_demo2 #valor{
+    position: absolute;
+    margin-top: 2px;
+    right:35%;
+}
+
+#container_demo2 #button{
+    position: absolute;
+    margin-top: -1px;
+    right:6%;
+}
 #container_demo img{
     margin-top: 5%; 
     height: 48px;
@@ -461,6 +488,20 @@ div #container_demo{
     text-decoration: none;
     display: inline-block;
     font-size: 10px;
+    cursor:pointer;
+    
+}
+
+.buttonStyle3{
+    
+    background-color: #4CAF50; /* Green */
+    border: solid 1px;
+    color: black;
+    padding: 1% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
     cursor:pointer;
     
 }

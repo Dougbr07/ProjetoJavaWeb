@@ -17,7 +17,7 @@ public interface PedidoDao {
     
     public int insert(Pedido pedido, ArrayList<Produto> produtos);
     public void remove (int id);
-    public ArrayList<Pedido> list();
+    public ArrayList<Pedido> list(int id);
     public Pedido search(int id);
     public void edit(Pedido pessoa);
 }

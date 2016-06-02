@@ -57,7 +57,7 @@ public class JdbcPedidoDao implements PedidoDao{
         
          try{
            
-         String sql = "insert into orders(datehour, price, customers_id) values(CURRENT_DATE,?,?)";
+         String sql = "insert into orders(datehour, total, customers_id) values(CURRENT_DATE,?,?)";
          
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setDouble(1, pedido.getPreco());
@@ -85,7 +85,7 @@ public class JdbcPedidoDao implements PedidoDao{
          int idPedido = idOrder();
          for(Produto element : produtos){
          
-         String sql2 = "insert into products_orders(products_id, orders_id, quantity) values(?,?,?)";
+         String sql2 = "insert into items(products_id, orders_id, quantity) values(?,?,?)";
          PreparedStatement prep = connection.prepareStatement(sql2);
          prep.setDouble(1, element.getId());
          prep.setInt(2, idPedido);
@@ -114,8 +114,32 @@ public class JdbcPedidoDao implements PedidoDao{
     }
 
     @Override
-    public ArrayList<Pedido> list() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Pedido> list(int id) {
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+        
+        try{
+        
+            String sql = "select * from orders where customers_id = ?";
+            PreparedStatement prep = connection.prepareStatement(sql);
+            prep.setDouble(1, id);
+            ResultSet rs = prep.executeQuery();
+            
+            while(rs.next()){
+        
+                Pedido pedido = new Pedido();
+                pedido.setId_pedido(rs.getInt("id"));
+                pedido.setDatahour(rs.getString("datehour"));
+                pedido.setPreco(rs.getDouble("total"));
+
+                pedidos.add(pedido);
+
+            }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    return pedidos;
     }
 
     @Override

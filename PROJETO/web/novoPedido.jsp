@@ -1,3 +1,5 @@
+<%@page import="DAO.JdbcPedidoDao"%>
+<%@page import="Bean.Pedido"%>
 <%@page import="Bean.Produto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.JdbcProdutoDao"%>
@@ -73,6 +75,14 @@
             }
         }
         
+        function submitDetalhes(id){
+            
+            document.getElementById("inputPedido").value = id;
+            document.getElementById("formList").submit();
+            
+            
+        }
+        
         </script>
     </head>
     <body>
@@ -88,24 +98,39 @@
                     <div id="wrapper">
                         
                         <div id="login" class="animate form">
-                            
+                            <form id="formList" method="post" action="ServletDetalhesPedido">
+                                <input style="display: none" type="text" name="idPedidoDetalhes"id="inputPedido">
+                                <center>LISTA DE PEDIDOS </center><br>
+                                <span style="margin-left: 13%"class="estiloLetra">ID</span>
+                                <span style="margin-left: 15%"class="estiloLetra">DATA</span>
+                                <span style="margin-left: 19%"class="estiloLetra">VALOR</span>
+                                
+                                
+                             <% 
+                            JdbcPedidoDao jdp2 = new JdbcPedidoDao();
+                            ArrayList<Pedido> listaPedido = jdp2.list(Integer.parseInt(session.getAttribute("id").toString()));
                            
+                            for (Pedido element : listaPedido ) {
+                                %>
+                                <div id="container_demo2" style="border:solid 1px;margin-bottom: 5px">
+                                    
+                                    <span id="id"><%=element.getId_pedido()%></span> 
+                                    <span id="date"><%=element.getDatahour()%></span> 
+                                    <span id="valor"><%=element.getPreco()%></span> 
+                                    <span id="button" type="submit" class="buttonStyle3" onclick="submitDetalhes(<%=element.getId_pedido()%>)">DETALHES</span>
+                                </div>
+                                <%
+                                }
+                                %>
                             
-                            
-                            
-                            
-                            
-                            LISTAR PEDIDOS
-                            
-                            
-
+                               
                             
                             
                                 
                                 <p class="change_link">
                                     <a href="#toregister" class="to_register">NOVO PEDIDO</a>
 				</p>
-                                
+                            </form>     
                            
                         </div>
 

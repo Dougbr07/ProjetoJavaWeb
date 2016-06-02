@@ -51,8 +51,8 @@ public class ServletFazerPedido extends HttpServlet {
                 JdbcProdutoDao p1 = new JdbcProdutoDao();
                 procurarProduto =  p1.search(Integer.parseInt(idProduto));
                 String qtdProduto = request.getParameter(idProduto);
-                double valorUni = procurarProduto.getPrice();
-                double valorCentro = procurarProduto.getCentro();
+                double valorCentro = procurarProduto.getPrice();
+                double valorUni = procurarProduto.getCentro();
                 
                 if(qtdProduto.length() > 2){
                 
@@ -90,13 +90,13 @@ public class ServletFazerPedido extends HttpServlet {
         
         
         pedido.setId_cliente(Integer.parseInt(request.getParameter("idCliente")));
+       
         pedido.setPreco(totalPedido);
         JdbcPedidoDao pedidoDao = new JdbcPedidoDao();
         pedidoDao.insert(pedido, produtos);
         
         
         RequestDispatcher r = request.getRequestDispatcher( "inicialCliente.jsp" );
-        request.setAttribute("validarPedido", totalPedido);
         r.forward( request, response );  
         
         

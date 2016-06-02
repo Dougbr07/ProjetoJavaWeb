@@ -60,15 +60,14 @@ public class JdbcProdutoDao implements ProdutoDao{
        
         try{
            
-         String sql = "insert into products(description,price,centro,amount, image_link, categories_id) values(?,?,?,?,?,?)";
+         String sql = "insert into products(description,price,centro,image_link, categories_id) values(?,?,?,?,?)";
          
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setString(1, produto.getDescription());
          prep.setDouble(2, produto.getPrice());
          prep.setDouble(3, produto.getCentro());
-         prep.setDouble(4, produto.getAmount());
-         prep.setString(5, produto.getImage());
-         prep.setInt(6, produto.getCategory());
+         prep.setString(4, produto.getImage());
+         prep.setInt(5, produto.getCategory());
 
          prep.executeUpdate();
          return true;
@@ -120,7 +119,6 @@ public class JdbcProdutoDao implements ProdutoDao{
                 produto.setDescription(rs.getString("description"));
                 produto.setPrice(rs.getDouble("price"));
                 produto.setCentro(rs.getDouble("centro"));
-                produto.setAmount(rs.getInt("amount"));
                 produto.setImage(rs.getString("image_link"));
                 produto.setCategory(rs.getInt("categories_id"));
                 produtos.add(produto);
@@ -152,7 +150,6 @@ public class JdbcProdutoDao implements ProdutoDao{
                 produto.setDescription(rs.getString("description"));
                 produto.setCentro(rs.getDouble("centro"));
                 produto.setPrice(rs.getDouble("price"));
-                produto.setAmount(rs.getInt("amount"));
                 produto.setImage(rs.getString("image_link"));
   
             }
@@ -172,7 +169,7 @@ public class JdbcProdutoDao implements ProdutoDao{
         
          try{
 
-         String sql = "update products set description = ?, price = ?, centro = ?, amount = ?, image_link = ?, categories_id = ? where id_produto = ?";
+         String sql = "update products set description = ?, price = ?, centro = ?, image_link = ?, categories_id = ? where id_produto = ?";
          
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setString(1, null);

@@ -41,7 +41,6 @@
                                     <span id="description"><%=element.getDescription()%></span>
                                     <span id="price"><%="Preço unidade: R$ " + element.getPrice()%></span>
                                     <span id="center"><%="Centro: R$ " + element.getCentro()%></span>
-                                    <span id="amount"><%="Quatidade:" + element.getAmount()%></span>
                                     <span onclick="submit()" id="edit" style="cursor: pointer;color:blue">Editar Produto</span>
                                     <input type="text" name="<%=element.getId()%>"style="display: none">
 
@@ -81,11 +80,6 @@
                             <p> 
                                 <label for="precocentro" class="youpasswd" data-icon="p"> Preço Centro </label>
                                 <input id="precocentro" name="precocentro" required="required" type="text" placeholder="10,5" /> 
-                            </p>
-
-                            <p> 
-                                <label for="quantidadeproduto" class="quantidadeproduto" data-icon="p"> Quantidade Produto </label>
-                                <input id="precocentro" name="quatidade" required="required" type="text" placeholder="10,50" /> 
                             </p>
 
                             <p> 

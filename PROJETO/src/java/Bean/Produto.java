@@ -5,7 +5,6 @@ public class Produto {
     private int id;
     private String description;
     private double price;
-    private int amount;
     private String image;
     private double centro;
     private int category;
@@ -44,20 +43,6 @@ public class Produto {
      */
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    /**
-     * @return the quantidade
-     */
-    public int getAmount() {
-        return amount;
-    }
-
-    /**
-     * @param amount the quantidade to set
-     */
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
 
     /**

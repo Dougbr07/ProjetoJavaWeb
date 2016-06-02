@@ -51,8 +51,8 @@ public class ServletFazerPedido extends HttpServlet {
                 JdbcProdutoDao p1 = new JdbcProdutoDao();
                 procurarProduto =  p1.search(Integer.parseInt(idProduto));
                 String qtdProduto = request.getParameter(idProduto);
-                double valorCentro = procurarProduto.getPrice();
-                double valorUni = procurarProduto.getCentro();
+                double valorCentro = procurarProduto.getCentro();
+                double valorUni = procurarProduto.getPrice();  
                 
                 if(qtdProduto.length() > 2){
                 

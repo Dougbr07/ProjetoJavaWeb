@@ -150,8 +150,8 @@ public class JdbcProdutoDao implements ProdutoDao{
             while(rs.next()){
                 
                 produto.setDescription(rs.getString("description"));
-                produto.setCentro(rs.getDouble("price"));
-                produto.setPrice(rs.getDouble("centro"));
+                produto.setCentro(rs.getDouble("centro"));
+                produto.setPrice(rs.getDouble("price"));
                 produto.setAmount(rs.getInt("amount"));
                 produto.setImage(rs.getString("image_link"));
   

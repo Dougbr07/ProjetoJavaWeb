@@ -8,6 +8,15 @@ public class Produto {
     private String image;
     private double centro;
     private int category;
+    private int amount;
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
     public int getCategory() {
         return category;

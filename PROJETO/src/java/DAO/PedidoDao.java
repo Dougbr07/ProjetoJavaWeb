@@ -14,7 +14,6 @@ import java.util.ArrayList;
  * @author Douglas
  */
 public interface PedidoDao {
-    
     public int insert(Pedido pedido, ArrayList<Produto> produtos);
     public void remove (int id);
     public ArrayList<Pedido> list(int id);

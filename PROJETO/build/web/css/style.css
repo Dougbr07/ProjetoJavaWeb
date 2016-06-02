@@ -335,6 +335,7 @@ p.change_link{
 	animation-name: fadeOutLeft;
 }
 
+
 /** the actual animation, credit where due : http://daneden.me/animate/ ***/
 .animate{
 	-webkit-animation-duration: 0.5s;

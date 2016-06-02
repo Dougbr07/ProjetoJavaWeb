@@ -1,8 +1,11 @@
 package Servlets;
 
+import Bean.Categoria;
 import Bean.Produto;
+import DAO.JdbcCategoriaDao;
 import DAO.JdbcProdutoDao;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,19 +18,19 @@ public class ServletCadastroProduto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        JdbcCategoriaDao categoriaDao = new JdbcCategoriaDao();
+        categoriaDao.validaCadastro(request.getParameter("categoriaproduto"));
+        
+        Categoria categoria = categoriaDao.search(request.getParameter("categoriaproduto"));
+        
+        
         Produto novoProduto = new Produto();
         novoProduto.setDescription(request.getParameter("descricao"));
         novoProduto.setPrice(Double.parseDouble(request.getParameter("precoproduto")));
         novoProduto.setCentro(Double.parseDouble(request.getParameter("precocentro")));
         novoProduto.setImage(request.getParameter("fotoproduto"));
-
-        if (request.getParameter("categoriaproduto").equals("Doce")) {
-            novoProduto.setCategory(1);
-        } else {
-            novoProduto.setCategory(2);
-        }
-
+        novoProduto.setCategory(categoria.getId());
+        
         JdbcProdutoDao produto = new JdbcProdutoDao();
         produto.insert(novoProduto);
 

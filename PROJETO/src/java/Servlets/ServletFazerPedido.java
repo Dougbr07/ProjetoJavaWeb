@@ -12,6 +12,7 @@ import DAO.JdbcProdutoDao;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,20 +47,23 @@ public class ServletFazerPedido extends HttpServlet {
                 if(!(request.getParameter(idProduto).equals("0"))){
                
                 
-                Produto procurarProduto;
-                procurarProduto =  p.search(Integer.parseInt(request.getParameter(idCount)));
+                Produto procurarProduto = new Produto();
+                JdbcProdutoDao p1 = new JdbcProdutoDao();
+                procurarProduto =  p1.search(Integer.parseInt(idProduto));
                 String qtdProduto = request.getParameter(idProduto);
                 double valorUni = procurarProduto.getPrice();
                 double valorCentro = procurarProduto.getCentro();
+                
                 if(qtdProduto.length() > 2){
                 
                       String valorQuebrado[];
                       valorQuebrado = qtdProduto.split("");
                       String unidades;
                       String centro = "";
-
+                    
                       unidades = valorQuebrado[valorQuebrado.length-2] + valorQuebrado[valorQuebrado.length-1];
-
+                      
+                     
                       for(int a =0; a <= valorQuebrado.length-3;a++){
 
                       centro += valorQuebrado[a];
@@ -76,9 +80,8 @@ public class ServletFazerPedido extends HttpServlet {
                 }
                 
                 Produto produto = new Produto();
-                produto.setId(i);
-                produto.setAmount(Integer.parseInt(qtdProduto));
-                
+                produto.setId(Integer.parseInt(idProduto));
+                produto.setAmount(Integer.parseInt(qtdProduto));                
                 produtos.add(produto);
                                 
                 }   
@@ -90,6 +93,11 @@ public class ServletFazerPedido extends HttpServlet {
         pedido.setPreco(totalPedido);
         JdbcPedidoDao pedidoDao = new JdbcPedidoDao();
         pedidoDao.insert(pedido, produtos);
+        
+        
+        RequestDispatcher r = request.getRequestDispatcher( "inicialCliente.jsp" );
+        request.setAttribute("validarPedido", totalPedido);
+        r.forward( request, response );  
         
         
     }

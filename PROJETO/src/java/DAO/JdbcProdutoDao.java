@@ -142,7 +142,7 @@ public class JdbcProdutoDao implements ProdutoDao{
      
             try{
         
-            String sql = "select * from produto where id_produto = ?";
+            String sql = "select * from products where id = ?";
             PreparedStatement prep = connection.prepareStatement(sql);
             prep.setInt(1, id);
             ResultSet rs = prep.executeQuery();

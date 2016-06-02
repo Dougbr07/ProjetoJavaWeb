@@ -16,6 +16,30 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+        
+        
+        
+        <script>
+           
+          
+                    
+                  function validar(){
+                  
+                   
+                   if(${validarPedido} === 1){
+                        alert("Pedido Efetuado Com Sucesso");   
+                   }
+                   if(${validarPedido} === 0){
+                        alert("Erro ao realizar pedido");   
+                   }
+  
+                }
+                
+                
+        </script>
+            
+            
+     
     </head>
     
     <%
@@ -35,11 +59,12 @@
     %>
     
     
-    <body>
+    <body onload="test()">
         <%@include file="cabeçalhoCliente.jsp"%>
+      ${validarPedido}
         <br>
              <div id="wrapper">
-                       
+                        
                         
                         <div id="login" class="animate form">
                             <form  method="post"action="ServletEditarUsuario" autocomplete="on"> 

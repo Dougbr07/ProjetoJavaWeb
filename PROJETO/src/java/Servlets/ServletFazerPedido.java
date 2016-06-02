@@ -70,7 +70,7 @@ public class ServletFazerPedido extends HttpServlet {
 
                       }
                       
-                      totalPedido = (Integer.parseInt(unidades)*valorUni) + (Integer.parseInt(centro)*valorCentro);
+                      totalPedido += (Integer.parseInt(unidades)*valorUni) + (Integer.parseInt(centro)*valorCentro);
                     
                 
                 }else{

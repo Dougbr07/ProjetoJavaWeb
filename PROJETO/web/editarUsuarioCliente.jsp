@@ -46,10 +46,14 @@
                         <div id="login" class="animate form">
                             <form  method="post"action="ServletEditarUsuario" autocomplete="on"> 
                               
-                               
+                                
                                 <p> 
                                     <label for="emailsignup" class="youpasswd" data-icon="p"> ID </label>
                                     <input readonly="readonly" id="passwordsignup" name="id" value="<%=p1.getId()%>" required="required" type="text"/>
+                                </p>
+                                <p> 
+                                    <label for="usernamesignup" class="uname">Foto</label>
+                                    <input id="usernamesignup" name="foto" type="file"/>
                                 </p>
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Nome Completo</label>

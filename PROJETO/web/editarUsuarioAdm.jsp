@@ -51,6 +51,10 @@
                                     <input readonly="readonly" id="usernamesignup" name="id" value="<%=p1.getId()%>" required="required" type="text" placeholder="mysuperusername690" />
                                 </p>
                                 <p> 
+                                    <label for="usernamesignup" class="uname">Foto</label>
+                                    <input id="usernamesignup" value="<%=p1.getFoto()%>" name="foto" type="file"/>
+                                </p>
+                                <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Nome Completo</label>
                                     <input id="usernamesignup" name="nome" value="<%=p1.getNome()%>" required="required" type="text" placeholder="mysuperusername690" />
                                 </p>

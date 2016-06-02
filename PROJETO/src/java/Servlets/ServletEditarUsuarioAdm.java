@@ -38,6 +38,7 @@ public class ServletEditarUsuarioAdm extends HttpServlet {
        novaPessoa.setEmail(request.getParameter("email"));
        novaPessoa.setEndereco(request.getParameter("endereco"));
         novaPessoa.setTelefone(request.getParameter("telefone"));
+        novaPessoa.setFoto(request.getParameter("foto"));
        
        JdbcPessoaDao pessoa = new JdbcPessoaDao();
        pessoa.edit(novaPessoa);

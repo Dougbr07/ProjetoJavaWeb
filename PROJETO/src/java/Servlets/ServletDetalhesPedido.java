@@ -7,6 +7,7 @@ package Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,14 +33,13 @@ public class ServletDetalhesPedido extends HttpServlet {
         
         
         int idPedido = Integer.parseInt(request.getParameter("idPedidoDetalhes"));
+        
+        RequestDispatcher r = request.getRequestDispatcher( "detalhesPedido.jsp" );
+        request.setAttribute("id", idPedido);
+        r.forward( request, response );  
        
         
-        
-        
-        
-        
-        
-        
+
         
     }
 

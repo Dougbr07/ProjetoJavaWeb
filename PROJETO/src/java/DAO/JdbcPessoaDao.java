@@ -79,7 +79,7 @@ public class JdbcPessoaDao implements PessoaDao{
      
       try{
 
-         String sql = "update customers set fullname = ?, cpf = ?, user_login = ?, password = ?, endereco = ?, email = ?, telefone = ?, rg = ? where id = ?";
+         String sql = "update customers set fullname = ?, cpf = ?, user_login = ?, password = ?, endereco = ?, email = ?, telefone = ?, rg = ?, image_link = ? where id = ? ";
          
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setString(1, pessoa.getNome());
@@ -90,7 +90,8 @@ public class JdbcPessoaDao implements PessoaDao{
          prep.setString(6, pessoa.getEmail());
          prep.setString(7, pessoa.getTelefone());
          prep.setString(8, pessoa.getRg());
-         prep.setInt(9, pessoa.getId());
+         prep.setString(9, pessoa.getFoto());
+         prep.setInt(10, pessoa.getId());
          int update = prep.executeUpdate();
          
          if(update <= 0){
@@ -151,6 +152,7 @@ public class JdbcPessoaDao implements PessoaDao{
                 pessoa.setUsuario(rs.getString("user_login"));
                 pessoa.setSenha(rs.getString("password"));
                 pessoa.setTelefone(rs.getString("telefone"));
+                pessoa.setUser_nivel(rs.getInt("user_nivel"));
                 pessoas.add(pessoa);
 
             }

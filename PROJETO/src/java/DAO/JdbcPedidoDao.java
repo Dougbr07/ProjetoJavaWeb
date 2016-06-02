@@ -11,100 +11,80 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import mysingleton.MySingleton;
 
-public class JdbcPedidoDao implements PedidoDao{
+public class JdbcPedidoDao implements PedidoDao {
+
     Connection connection;
 
     public JdbcPedidoDao() {
-    this.connection = MySingleton.getConnection();
+        this.connection = MySingleton.getConnection();
     }
 
-    
-    
-    
-    public int idOrder(){
-      
-     
-    int pedido = 0;
-            try{
-        
+    public int idOrder() {
+
+        int pedido = 0;
+        try {
+
             String sql = "select * from orders where id = (SELECT MAX(id) FROM orders)";
             PreparedStatement prep = connection.prepareStatement(sql);
             ResultSet rs = prep.executeQuery();
-            
-            while(rs.next()){
-                
+
+            while (rs.next()) {
+
                 pedido = rs.getInt("id");
 
-  
             }
             return pedido;
-        
+
         } catch (SQLException ex) {
             Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    return pedido;
-    
-    
-    
-    
+        return pedido;
+
     }
-    
-   
+
     public int insert(Pedido pedido, ArrayList<Produto> produtos) {
-        
-        
-         try{
-           
-         String sql = "insert into orders(datehour, total, customers_id) values(CURRENT_DATE,?,?)";
-         
-         PreparedStatement prep = connection.prepareStatement(sql);
-         prep.setDouble(1, pedido.getPreco());
-         prep.setInt(2, pedido.getId_cliente());
-         prep.executeUpdate();
-         
-             insertProdutos(produtos);
 
-         }catch(SQLException e){
-                e.printStackTrace();
-                 System.out.println("Oops! Ocorreu um erro inesperado!");
-         } catch (Exception ex) {
-            Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        try {
+
+            String sql = "insert into orders(datehour, total, customers_id) values(CURRENT_DATE,?,?)";
+
+            PreparedStatement prep = connection.prepareStatement(sql);
+            prep.setDouble(1, pedido.getPreco());
+            prep.setInt(2, pedido.getId_cliente());
+            prep.executeUpdate();
+
+            insertProdutos(produtos);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Oops! Ocorreu um erro inesperado!");
+        } 
         return 0;
-        
-        
+
     }
-    
-    
+
     public void insertProdutos(ArrayList<Produto> produtos) {
-    
-     try{
 
-         int idPedido = idOrder();
-         for(Produto element : produtos){
-         
-         String sql2 = "insert into items(products_id, orders_id, quantity) values(?,?,?)";
-         PreparedStatement prep = connection.prepareStatement(sql2);
-         prep.setDouble(1, element.getId());
-         prep.setInt(2, idPedido);
-         prep.setInt(3, element.getAmount());
-         prep.executeUpdate();
-         
-         }
+        try {
 
+            int idPedido = idOrder();
+            for (Produto element : produtos) {
 
-         }catch(SQLException e){
-                e.printStackTrace();
-                 System.out.println("Oops! Ocorreu um erro inesperado!");
-         } catch (Exception ex) {
-            Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-        
-    
-    
+                String sql2 = "insert into items(products_id, orders_id, quantity) values(?,?,?)";
+                PreparedStatement prep = connection.prepareStatement(sql2);
+                prep.setDouble(1, element.getId());
+                prep.setInt(2, idPedido);
+                prep.setInt(3, element.getAmount());
+                prep.executeUpdate();
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Oops! Ocorreu um erro inesperado!");
+        } 
+
     }
 
     @Override
@@ -115,16 +95,16 @@ public class JdbcPedidoDao implements PedidoDao{
     @Override
     public ArrayList<Pedido> list(int id) {
         ArrayList<Pedido> pedidos = new ArrayList<>();
-        
-        try{
-        
+
+        try {
+
             String sql = "select * from orders where customers_id = ?";
             PreparedStatement prep = connection.prepareStatement(sql);
             prep.setDouble(1, id);
             ResultSet rs = prep.executeQuery();
-            
-            while(rs.next()){
-        
+
+            while (rs.next()) {
+
                 Pedido pedido = new Pedido();
                 pedido.setId_pedido(rs.getInt("id"));
                 pedido.setDatahour(rs.getString("datehour"));
@@ -133,12 +113,12 @@ public class JdbcPedidoDao implements PedidoDao{
                 pedidos.add(pedido);
 
             }
-        
+
         } catch (SQLException ex) {
             Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    return pedidos;
+        return pedidos;
     }
 
     @Override
@@ -209,9 +189,5 @@ public class JdbcPedidoDao implements PedidoDao{
     public void edit(Pedido pessoa) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    
-    
-    
+
 }

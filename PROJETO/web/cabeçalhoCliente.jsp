@@ -1,3 +1,6 @@
+<%@page import="DAO.JdbcPessoaDao"%>
+<%@page import="Bean.Pessoa"%>
+<%@page import="Bean.Pessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -32,6 +35,22 @@
 
 
         </script>
+        
+            <%
+        if(session.getAttribute("id") == null){
+
+        RequestDispatcher r = request.getRequestDispatcher( "index.jsp" );
+        r.forward( request, response );  
+
+        }
+        
+        Pessoa pCliente = new Pessoa();
+        JdbcPessoaDao p = new JdbcPessoaDao();
+        String idCliente = session.getAttribute("id").toString();
+        pCliente = p.search(Integer.parseInt(idCliente));
+
+        
+    %>
     </head>
     <body>
         <br><br>

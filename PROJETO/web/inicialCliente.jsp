@@ -42,21 +42,6 @@
      
     </head>
     
-    <%
-        if(session.getAttribute("id") == null){
-
-        RequestDispatcher r = request.getRequestDispatcher( "index.jsp" );
-        r.forward( request, response );  
-
-        }
-        
-        Pessoa pCliente = new Pessoa();
-        JdbcPessoaDao p = new JdbcPessoaDao();
-        String idCliente = session.getAttribute("id").toString();
-        pCliente = p.search(Integer.parseInt(idCliente));
-
-        
-    %>
     
     
     <body onload="test()">

@@ -60,7 +60,7 @@
        
         valor = document.getElementById(id).value;
             
-            if(valor > 99){    
+            if(valor > 100){    
 
                 valor = parseInt(valor) - 100;
                 document.getElementById(id).value = valor;
@@ -160,7 +160,7 @@
                                    -
                                </span>
 
-                               <input readonly="readonly" value ="0" style="height: 10px;width: 20px;text-align: center" name="<%=element.getId()%>"id="<%=element.getId()%>"> 
+                               <input readonly="readonly" value ="0" style="height: 10px;width: 30px;text-align: center;padding: 10px 13px" name="<%=element.getId()%>"id="<%=element.getId()%>"> 
                                <input type="text" style="display:none" value="<%=element.getId()%>" name="idCont<%=idCont%>">
                                 <span  class="buttonStyle" onclick="adicionar(<%=element.getId()%>)">
                                    +

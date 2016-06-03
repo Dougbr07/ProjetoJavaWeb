@@ -55,14 +55,14 @@
                                     JdbcCategoriaDao jdpcategory = new JdbcCategoriaDao();
                                     Categoria categoria = jdpcategory.search( p3.getCategory() );
                                 %>
-                                    <option ><%=categoria.getName()%></option>
+                                    <option ><%=categoria.getId() + "-" +categoria.getName()%></option>
                                 <%
                                     ArrayList<Categoria> lists = jdpcategory.list();
                                     for (Categoria element : lists) {
                                         if(!element.getName().equals(categoria.getName())){
                                 %>
                                     
-                                        <option ><%=element.getName()%></option>
+                                        <option ><%=element.getId() + "-" + element.getName()%></option>
                                 
                                 <%
                                         }
@@ -71,7 +71,7 @@
                                 
                             </select>
                             <!--<span type="button" value="Novo" class="buttonStyle3" onclick="setCategoria()"> Novo</span>-->
-                            <input type="text" name="id" value="<%=p3.getId()%>">
+                            <input type="text" name="id" value="<%=p3.getId()%>" style="display: none">
                         </p>
 
                         <p class="login button"> 

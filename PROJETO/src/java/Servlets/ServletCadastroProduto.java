@@ -23,7 +23,6 @@ public class ServletCadastroProduto extends HttpServlet {
         
         Categoria categoria = categoriaDao.search(request.getParameter("categoriaproduto"));
         
-        
         Produto novoProduto = new Produto();
         novoProduto.setDescription(request.getParameter("descricao"));
         novoProduto.setPrice(Double.parseDouble(request.getParameter("precoproduto")));
@@ -33,7 +32,7 @@ public class ServletCadastroProduto extends HttpServlet {
         
         JdbcProdutoDao produto = new JdbcProdutoDao();
         produto.insert(novoProduto);
-        response.sendRedirect("inicialAdm.jsp");
+        response.sendRedirect("cadastroProduto.jsp");
     }
 
     @Override

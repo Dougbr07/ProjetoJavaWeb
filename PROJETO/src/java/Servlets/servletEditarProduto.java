@@ -28,13 +28,17 @@ public class servletEditarProduto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String categoria = request.getParameter("categoriaproduto");
+        String[] split = categoria.split("-");
+        String idcategoria = split[0];
+        
         Produto produto = new Produto();
         produto.setId(Integer.parseInt(request.getParameter("id")));
         produto.setDescription(request.getParameter("descricao"));
         produto.setPrice(Double.parseDouble(request.getParameter("precoproduto")));
         produto.setCentro(Double.parseDouble(request.getParameter("precocentro")));
         produto.setImage(request.getParameter("fotoproduto"));
-        //produto.setCategory(Integer.parseInt(request.getParameter("categoriaproduto")));
+        produto.setCategory(Integer.parseInt(idcategoria));
         
         JdbcProdutoDao jdbcProdutoDao = new JdbcProdutoDao();
         jdbcProdutoDao.edit(produto);

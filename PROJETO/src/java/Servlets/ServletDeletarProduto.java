@@ -19,7 +19,6 @@ public class ServletDeletarProduto extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         JdbcProdutoDao jdbcProdutoDao = new JdbcProdutoDao();
         jdbcProdutoDao.remove(Integer.parseInt(request.getParameter("id")));
-        System.out.println("id = " + Integer.parseInt(request.getParameter("id")));
         response.sendRedirect("cadastroProduto.jsp");
     }
     

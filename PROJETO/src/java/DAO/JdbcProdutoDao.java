@@ -174,7 +174,7 @@ public class JdbcProdutoDao implements ProdutoDao{
          prep.setDouble(2, produto.getPrice());
          prep.setDouble(3, produto.getCentro());
          prep.setString(4, produto.getImage());
-         prep.setInt(5, 1);
+         prep.setInt(5, produto.getCategory());
          prep.setInt(6, produto.getId());
          
         int update = prep.executeUpdate();

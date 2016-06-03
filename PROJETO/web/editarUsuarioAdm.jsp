@@ -23,8 +23,7 @@
     <body>
         <%@include file="cabeçalhoAdm.jsp" %>
         <%
-        
-        JdbcPessoaDao p = new JdbcPessoaDao();
+
         Pessoa p1 = new Pessoa();
         int id = Integer.parseInt(session.getAttribute("id").toString());
         p1 = p.search(id);

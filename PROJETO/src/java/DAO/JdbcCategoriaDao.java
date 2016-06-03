@@ -63,8 +63,21 @@ public class JdbcCategoriaDao implements CategoriaDao {
     }
 
     @Override
-    public Pedido search(int id) {
-        return null;
+    public Categoria search(int id) {
+        Categoria categoria = new Categoria();
+        try {
+            String sql = "select * from categories where id = ? ";
+            PreparedStatement prep = connection.prepareStatement(sql);
+            prep.setInt(1, id);
+            ResultSet rs = prep.executeQuery();
+            if(rs.next()){
+                categoria.setId(rs.getInt("id"));
+                categoria.setName(rs.getString("name"));
+            }
+        } catch (SQLException ex) {
+            System.out.println("Erro" + ex);
+        }
+        return categoria;
     }
 
     public Categoria search(String name) {

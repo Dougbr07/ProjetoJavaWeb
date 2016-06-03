@@ -88,14 +88,13 @@ public class JdbcProdutoDao implements ProdutoDao{
          try{
 
        
-         String sql = "delete from products where id_pessoa = ?";
+         String sql = "delete from products where id = ?";
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setInt(1, id);
          prep.executeUpdate();
 
          }catch(SQLException e){
-                e.printStackTrace();
-                 System.out.println("Oops! Ocorreu um erro inesperado!");
+                 System.out.println("Oops! Ocorreu um erro inesperado!" + e);
          }
         
         
@@ -146,14 +145,13 @@ public class JdbcProdutoDao implements ProdutoDao{
             ResultSet rs = prep.executeQuery();
             
             while(rs.next()){
-                
+                produto.setId(rs.getInt("id"));
                 produto.setDescription(rs.getString("description"));
                 produto.setCentro(rs.getDouble("centro"));
                 produto.setPrice(rs.getDouble("price"));
                 produto.setImage(rs.getString("image_link"));
-  
+                produto.setCategory(rs.getInt("categories_id"));
             }
-            return produto;
         
         } catch (SQLException ex) {
             Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -165,16 +163,21 @@ public class JdbcProdutoDao implements ProdutoDao{
     }
 
     @Override
-    public void edit(Produto produti) {
+    public void edit(Produto produto) {
         
          try{
 
-         String sql = "update products set description = ?, price = ?, centro = ?, image_link = ?, categories_id = ? where id_produto = ?";
+         String sql = "update products set description = ?, price = ?, centro = ?, image_link = ?, categories_id = ? where id = ?";
          
          PreparedStatement prep = connection.prepareStatement(sql);
-         prep.setString(1, null);
-
-         int update = prep.executeUpdate();
+         prep.setString(1, produto.getDescription());
+         prep.setDouble(2, produto.getPrice());
+         prep.setDouble(3, produto.getCentro());
+         prep.setString(4, produto.getImage());
+         prep.setInt(5, 1);
+         prep.setInt(6, produto.getId());
+         
+        int update = prep.executeUpdate();
          
          if(update <= 0){
              throw new Exception("Nenhum dado foi inserido !!!");
@@ -184,8 +187,7 @@ public class JdbcProdutoDao implements ProdutoDao{
          }
 
          }catch(SQLException e){
-                e.printStackTrace();
-                 System.out.println("Oops! Ocorreu um erro inesperado!");
+                 System.out.println("Oops! Ocorreu um erro inesperado!" + e);
          } catch (Exception ex) {
             Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
         }

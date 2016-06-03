@@ -26,6 +26,8 @@ public class Produto {
         this.category = category;
     }
 
+    
+
     /**
      * @return the descricao
      */

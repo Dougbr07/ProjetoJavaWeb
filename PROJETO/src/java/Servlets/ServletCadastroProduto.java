@@ -33,9 +33,7 @@ public class ServletCadastroProduto extends HttpServlet {
         
         JdbcProdutoDao produto = new JdbcProdutoDao();
         produto.insert(novoProduto);
-
         response.sendRedirect("inicialAdm.jsp");
-
     }
 
     @Override

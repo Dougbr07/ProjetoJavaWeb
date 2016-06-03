@@ -421,10 +421,16 @@ div #container_demo2{
     width: 48px;
 }
 
-#container_demo a{
+#container_demo #editar{
     position: absolute;
-    margin-top: 12%;
-    right:20px;
+    margin-top: 10%;
+    right:40px;
+}
+
+#container_demo #deletar{
+    position: absolute;
+    margin-top: 15%;
+    right:40px;
 }
 
 #container_demo #price{

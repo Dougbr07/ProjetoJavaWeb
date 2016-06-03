@@ -31,38 +31,33 @@
     </head>
     <body>
         <%@include file="cabeçalhoAdm.jsp" %>
-
-
         <section>				
-
-
             <a class="hiddenanchor" id="toregister"></a>
             <a class="hiddenanchor" id="tologin"></a>
 
             <div id="wrapper">
 
                 <div id="login" class="animate form">
-
                     <%
                         JdbcProdutoDao jdp = new JdbcProdutoDao();
                         ArrayList<Produto> lista = jdp.list();
                         for (Produto element : lista) {
                     %>
                     <div id="container_demo">
+                        
                         <img src="<%=element.getImage()%>"> 
                         <span id="description"><%=element.getDescription()%></span>
                         <span id="price"><%="Preço unidade: R$ " + element.getPrice()%></span>
                         <span id="center"><%="Centro: R$ " + element.getCentro()%></span>
-                        <span onclick="submit()" id="edit" style="cursor: pointer;color:blue">Editar Produto</span>
+                        <a id="editar" href="servletEditarProduto?id=<%=element.getId()%>" > Editar Produto </a>
+                        <a id="deletar" href="ServletDeletarProduto?id=<%=element.getId()%>"> Deletar Produto </a>
+                        
                         <input type="text" name="<%=element.getId()%>"style="display: none">
-
                     </div>
                     <br>
                     <%
                         }
                     %>
-
-
 
 
                     <p class="change_link">

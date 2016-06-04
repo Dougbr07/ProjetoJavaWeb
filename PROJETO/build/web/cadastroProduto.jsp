@@ -21,10 +21,14 @@
         <script>
             function setCategoria() {
                 nome = prompt("Digite o nome da nova categoria!");
-                select = document.getElementById("categoriaproduto");
-                var option = document.createElement("option");
-                option.text = nome;
-                select.add(option);
+                if(!nome.length == 0){
+                    select = document.getElementById("categoriaproduto");
+                    var option = document.createElement("option");
+                    option.text = nome;
+                    select.add(option);
+                }else{
+                    alert("Digite um nome valido para a categoria!");
+                }
             }
 
         </script>

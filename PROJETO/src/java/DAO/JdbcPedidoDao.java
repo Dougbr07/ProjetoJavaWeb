@@ -59,7 +59,7 @@ public class JdbcPedidoDao implements PedidoDao {
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Oops! Ocorreu um erro inesperado!");
-        } 
+        }
         return 0;
 
     }
@@ -83,7 +83,7 @@ public class JdbcPedidoDao implements PedidoDao {
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Oops! Ocorreu um erro inesperado!");
-        } 
+        }
 
     }
 
@@ -123,66 +123,62 @@ public class JdbcPedidoDao implements PedidoDao {
 
     @Override
     public Pedido search(int id) {
-        
-          Pedido pedido = new Pedido();   
-     
-            try{
-        
+
+        Pedido pedido = new Pedido();
+
+        try {
+
             String sql = "select * from orders where id = ?";
             PreparedStatement prep = connection.prepareStatement(sql);
             prep.setInt(1, id);
             ResultSet rs = prep.executeQuery();
-            
-            while(rs.next()){
-                
+
+            while (rs.next()) {
+
                 pedido.setId_pedido(rs.getInt("id"));
                 pedido.setPreco(rs.getDouble("total"));
                 pedido.setDatahour(rs.getString("datehour"));
 
-
             }
             return pedido;
-        
+
         } catch (SQLException ex) {
             Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    return pedido;
-        
-        
+        return pedido;
+
     }
-    
-    public ArrayList<Produto> listaDeProdutosPedido(int id){
-    
-    ArrayList<Produto> produtos = new ArrayList<>();
-        
-        try{
-        
-            String sql = " select items.quantity, products.description from items\n" +
-" inner join products on products.id = items.products_id\n" +
-" inner join orders on orders.id = items.orders_id\n" +
-" where orders.id = ?";
+
+    public ArrayList<Produto> listaDeProdutosPedido(int id) {
+
+        ArrayList<Produto> produtos = new ArrayList<>();
+
+        try {
+
+            String sql = " select items.quantity, products.description from items\n"
+                    + " inner join products on products.id = items.products_id\n"
+                    + " inner join orders on orders.id = items.orders_id\n"
+                    + " where orders.id = ?";
             PreparedStatement prep = connection.prepareStatement(sql);
             prep.setDouble(1, id);
             ResultSet rs = prep.executeQuery();
-            
-            while(rs.next()){
-        
+
+            while (rs.next()) {
+
                 Produto produto = new Produto();
                 produto.setAmount(rs.getInt("quantity"));
                 produto.setDescription(rs.getString("description"));
                 produtos.add(produto);
 
             }
-        
+
         } catch (SQLException ex) {
             Logger.getLogger(JdbcPessoaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    return produtos;
-        
-    
-    
+        return produtos;
+
     }
 
     @Override

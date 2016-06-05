@@ -66,7 +66,7 @@ public class JdbcProdutoDao implements ProdutoDao{
          prep.setString(1, produto.getDescription());
          prep.setDouble(2, produto.getPrice());
          prep.setDouble(3, produto.getCentro());
-         prep.setString(4, produto.getImage());
+         prep.setString(4, "images\\"+produto.getImage());
          prep.setInt(5, produto.getCategory());
 
          prep.executeUpdate();
@@ -173,7 +173,7 @@ public class JdbcProdutoDao implements ProdutoDao{
          prep.setString(1, produto.getDescription());
          prep.setDouble(2, produto.getPrice());
          prep.setDouble(3, produto.getCentro());
-         prep.setString(4, produto.getImage());
+         prep.setString(4, "images\\"+produto.getImage());
          prep.setInt(5, produto.getCategory());
          prep.setInt(6, produto.getId());
          

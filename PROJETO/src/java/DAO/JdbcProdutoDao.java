@@ -33,7 +33,7 @@ public class JdbcProdutoDao implements ProdutoDao{
     int num = 0;
             try{
         
-            String sql = "SELECT COUNT (*) AS QTDE FROM products";
+            String sql = "SELECT COUNT (*) AS QTDE FROM products where status = true";
             PreparedStatement prep = connection.prepareStatement(sql);
             ResultSet rs = prep.executeQuery();
             

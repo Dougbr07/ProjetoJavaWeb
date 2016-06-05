@@ -60,7 +60,7 @@ public class JdbcProdutoDao implements ProdutoDao{
        
         try{
            
-         String sql = "insert into products(description,price,centro,image_link, categories_id) values(?,?,?,?,?)";
+         String sql = "insert into products(description,price,centro,image_link, categories_id,status) values(?,?,?,?,?,true)";
          
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setString(1, produto.getDescription());
@@ -88,7 +88,7 @@ public class JdbcProdutoDao implements ProdutoDao{
          try{
 
        
-         String sql = "delete from products where id = ?";
+         String sql = "update products set status = false where id = ?";
          PreparedStatement prep = connection.prepareStatement(sql);
          prep.setInt(1, id);
          prep.executeUpdate();
@@ -107,7 +107,7 @@ public class JdbcProdutoDao implements ProdutoDao{
         
         try{
         
-            String sql = "select * from products";
+            String sql = "select * from products where status = true";
             PreparedStatement prep = connection.prepareStatement(sql);
             ResultSet rs = prep.executeQuery();
             

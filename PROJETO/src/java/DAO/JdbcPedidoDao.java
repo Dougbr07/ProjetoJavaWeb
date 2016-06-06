@@ -47,7 +47,7 @@ public class JdbcPedidoDao implements PedidoDao {
 
         try {
 
-            String sql = "insert into orders(datehour, total, customers_id) values(CURRENT_DATE,?,?)";
+            String sql = "insert into orders(datehour, total, customers_id) values(CURRENT_TIMESTAMP(0),?,?)";
 
             PreparedStatement prep = connection.prepareStatement(sql);
             prep.setDouble(1, pedido.getPreco());

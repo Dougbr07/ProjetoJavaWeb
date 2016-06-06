@@ -116,7 +116,7 @@
                                     
                                     <span id="id"><%=element.getId_pedido()%></span> 
                                     <span id="date"><%=element.getDatahour()%></span> 
-                                    <span id="valor"><%=element.getPreco()%></span> 
+                                    <span id="valor"><%="R$: " + element.getPreco()%></span> 
                                     <span id="button" type="submit" class="buttonStyle3" onclick="submitDetalhes(<%=element.getId_pedido()%>)">DETALHES</span>
                                 </div>
                                 <%

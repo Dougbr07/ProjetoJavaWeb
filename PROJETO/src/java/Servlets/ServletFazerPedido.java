@@ -96,7 +96,7 @@ public class ServletFazerPedido extends HttpServlet {
         pedidoDao.insert(pedido, produtos);
         
         
-        RequestDispatcher r = request.getRequestDispatcher( "inicialCliente.jsp" );
+        RequestDispatcher r = request.getRequestDispatcher( "novoPedido.jsp" );
         r.forward( request, response );  
         
         

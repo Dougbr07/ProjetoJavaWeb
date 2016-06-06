@@ -123,7 +123,7 @@
                         </table>
                 
                      <br>
-                     <span class="estiloLetra">TOTAL DO PEDIDO:</span><%=" "+pedido.getPreco()%>
+                     <span class="estiloLetra">TOTAL DO PEDIDO:</span><%=" "+"R$: "+pedido.getPreco()%>
                     
                 </form>
             </div>

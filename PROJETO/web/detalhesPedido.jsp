@@ -23,6 +23,8 @@
         
     </head>
     
+
+    
     <%
 
         int idPedido = Integer.parseInt(request.getAttribute("id").toString());
@@ -42,7 +44,7 @@
         <div id="wrapper">
            
            
-            <div id="login" class="animate form">
+            <div id="login" class="animate form conteudo">
                 <center>DETALHES DO PEDIDO</center><BR>
                 <form class="animate form">
                 
@@ -94,28 +96,30 @@
                             
                         </table>
                                 <br><br>
-                        <table>
-                            
-                            <tr>
+                        <table class="altrowstable" id="alternatecolor">
+                            <tr><td>QUANTIDADE</td><td>PRODUTO</td></tr>
+                           
                                 
                                 <%
                                 for(Produto element : produtos){
                               
-                                out.print("<tr style=\" height:30px\">");
-                                out.print("<td>");
-                                out.print(element.getAmount());
-                                out.print("</td>");
+                                    %>
+                                <tr>
+                                <td>
+                                <%=element.getAmount()%>
+                                </td>
                                 
                              
                            
                            
                              
-                                out.print("<td style=\" height:30px\">");
-                                out.print(element.getDescription());
-                                out.print("</td>");
+                                <td style=" width: 100%">
+                                <%= element.getDescription()%>   
+                                </td>
                              
-                                out.print("</tr>");
-                                
+                                </tr>
+                              
+                                <% 
                                 }
                                 
                                 %>
@@ -123,8 +127,7 @@
                         </table>
                 
                      <br>
-                     <span class="estiloLetra">TOTAL DO PEDIDO:</span><%=" "+"R$: "+pedido.getPreco()%>
-                    
+                     <span style="margin-left: 60%"><span class="estiloLetra">TOTAL DO PEDIDO:</span><%=" "+"R$: "+pedido.getPreco()%></span>
                 </form>
             </div>
                 

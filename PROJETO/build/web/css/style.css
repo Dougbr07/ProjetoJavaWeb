@@ -482,7 +482,20 @@ div #container_demo2{
     display: inline-block;
     font-size: 10px;
     cursor:pointer;
+    border-radius: 0px 10px 10px 0px;
+}
+.buttonStyle4{
     
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    cursor:pointer;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .buttonStyle2{
@@ -496,6 +509,21 @@ div #container_demo2{
     display: inline-block;
     font-size: 10px;
     cursor:pointer;
+        border-radius: 0px 10px 10px 0px;
+    
+}
+.buttonStyle5{
+    
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    cursor:pointer;
+     border-radius: 10px 0px 0px 10px;
     
 }
 
@@ -511,4 +539,34 @@ div #container_demo2{
     font-size: 12px;
     cursor:pointer;
     
+}
+
+table.altrowstable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #a9c6c9;
+	border-collapse: collapse;
+          
+}
+table.altrowstable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+      
+}
+table.altrowstable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+        
+}
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
 }

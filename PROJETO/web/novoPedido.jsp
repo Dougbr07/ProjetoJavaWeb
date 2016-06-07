@@ -82,7 +82,7 @@
             
             
         }
-        
+
         </script>
     </head>
     <body>
@@ -153,10 +153,10 @@
                                <span id="center"><%="Centro: R$ " + element.getCentro()%></span>
                                <span style="margin-left: 260px">
                                
-                               <span class="buttonStyle2" onclick="retirar100(<%=element.getId()%>)">
+                               <span class="buttonStyle5" onclick="retirar100(<%=element.getId()%>)">
                                    <
                                </span>
-                               <span class="buttonStyle" onclick="retirar(<%=element.getId()%>)">
+                               <span class="buttonStyle4" onclick="retirar(<%=element.getId()%>)">
                                    -
                                </span>
 
@@ -188,7 +188,7 @@
                     </div>
                 </div>
 						
-                
+                                  
              
             </section>
 

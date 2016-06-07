@@ -127,7 +127,7 @@
                         </table>
                 
                      <br>
-                     <span style="margin-left: 60%"><span class="estiloLetra">TOTAL DO PEDIDO:</span><%=" "+"R$: "+pedido.getPreco()%></span>
+                     <span style="margin-left: 0"><span class="estiloLetra">TOTAL DO PEDIDO:</span><%=" "+"R$: "+pedido.getPreco()%></span>
                 </form>
             </div>
                 

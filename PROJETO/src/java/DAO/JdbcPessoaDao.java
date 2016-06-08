@@ -59,7 +59,7 @@ public class JdbcPessoaDao implements PessoaDao{
          prep.setString(6, pessoa.getRg());
          prep.setString(7, pessoa.getEmail());
          prep.setString(8, pessoa.getTelefone());
-         prep.setString(9, pessoa.getFoto());
+         prep.setString(9, "images\\"+pessoa.getFoto());
          prep.executeUpdate();
          return true;
 
@@ -90,7 +90,7 @@ public class JdbcPessoaDao implements PessoaDao{
          prep.setString(6, pessoa.getEmail());
          prep.setString(7, pessoa.getTelefone());
          prep.setString(8, pessoa.getRg());
-         prep.setString(9, pessoa.getFoto());
+         prep.setString(9, "images\\"+pessoa.getFoto());
          prep.setInt(10, pessoa.getId());
          int update = prep.executeUpdate();
          
